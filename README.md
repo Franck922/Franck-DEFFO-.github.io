@@ -1,5 +1,5 @@
 # 🛡️ Franck DEFFO | Portfolio Ingénierie Cybersécurité & Réseaux
-> *Étudiant Bachelor 3 ECE Paris | Junior Cybersecurity Analyst (Cisco Certified)*
+> Étudiant Bachelor 3 ECE Paris | Junior Cybersecurity Analyst (Cisco Certified)
 
 Bienvenue sur ma plateforme de réalisations techniques. Ce portfolio est conçu comme une documentation vivante de mes compétences opérationnelles. De la conception d'architectures réseaux résilientes à la mise en œuvre de centres de surveillance (SOC), chaque projet ici démontre une capacité à résoudre des problématiques complexes de sécurité et d'infrastructure.
 

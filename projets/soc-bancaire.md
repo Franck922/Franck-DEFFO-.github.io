@@ -1,5 +1,5 @@
 # 🏦 Mise en place d’un SOC et Supervision d’une Infrastructure Bancaire
-> **Projet réalisé à l'ECE Paris | Février - Mars 2026**
+> Projet réalisé à l'ECE Paris | Février - Mars 2026
 
 ## 📝 Contexte du Projet
 Dans le secteur bancaire, la disponibilité des services et la confidentialité des données financières sont critiques. Ce projet consistait à simuler une infrastructure bancaire complète et à déployer un **SOC (Security Operations Center)** pour surveiller, détecter et réagir aux incidents en temps réel.

@@ -2,7 +2,7 @@
 > Projet Infrastructure & Sécurité | ECE Paris
 
 ---
-### 📄 [Consulter le Rapport Technique Complet (PDF)](../RAPPORT_TP_MINI_PROJET.pdf)
+### 📄 [Consulter le Rapport Technique Complet (PDF)](../RAPPORT TP MINI PROJET.pdf)
 ---
 
 ## 📝 Objectif du Projet

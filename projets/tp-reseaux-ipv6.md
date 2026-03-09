@@ -1,32 +1,32 @@
 # 🛰️ Ingénierie Réseaux Cisco : Adressage VLSM & Transition IPv6
 > Expertise Réseaux & Télécoms | ECE Paris
 
+---
+### 📄 [Télécharger le Rapport Technique Complet (PDF)](../TP4-IPv6-Franck-DEFFO.pdf)
+---
+
 ## 📝 Objectif du Projet
-Concevoir et déployer une infrastructure réseau multi-sites résiliente, optimisée par un adressage VLSM (IPv4) et préparée aux futurs standards via une configuration Dual-Stack IPv6.
+Concevoir une infrastructure multi-sites résiliente, optimisée par un adressage VLSM (IPv4) et préparée aux standards de demain via une configuration Dual-Stack IPv6 complète.
 
 ## 🏗️ Architecture du Réseau
-L'infrastructure interconnecte plusieurs réseaux locaux (LAN) aux besoins en hôtes hétérogènes (de 9 à 64 machines) via des routeurs Cisco 2911.
+![Topologie Réseau IPv6](../topologie-ipv6.png)
+*Conception d'une infrastructure interconnectant 3 LANs distincts via un routeur Cisco 2911, avec segmentation par zones.*
 
 ## 🛠️ Réalisations Techniques
 
-### 1. Optimisation de l'Adressage IPv4 (VLSM)
-*   **Calcul de sous-réseaux** : Utilisation du *Variable Length Subnet Masking* pour segmenter l'espace d'adressage en fonction des besoins réels de chaque département.
-*   **Résultat** : Réduction du gaspillage d'adresses IP de plus de **40%** et optimisation des tables de routage.
+### 1. Ingénierie de l'Adressage (VLSM & Dual-Stack)
+*   **Optimisation IPv4** : Calcul de sous-réseaux à masques variables pour répondre aux besoins spécifiques de chaque LAN (de 9 à 64 hôtes).
+*   **Déploiement IPv6** : Mise en œuvre d'un adressage **Global Unicast** et configuration du mécanisme **SLAAC** pour l'autoconfiguration des postes clients.
 
-### 2. Déploiement de l'Infrastructure IPv6
-*   **Adressage Global Unicast** : Configuration de préfixes `2001:DB8:0:X::/64` pour garantir une connectivité globale.
-*   **Autoconfiguration SLAAC** : Mise en œuvre du mécanisme *Stateless Address Autoconfiguration* permettant aux hôtes d'obtenir leurs paramètres IP automatiquement via les Router Advertisements (RA).
-*   **Gestion Link-Local** : Utilisation d'adresses `FE80::` pour la communication locale et la gestion des passerelles par défaut.
+### 2. Routage & Diagnostic
+*   **Routage Unicast** : Activation du transfert de paquets IPv6 et configuration des passerelles par défaut.
+*   **Vérification technique** : Analyse des tables de routage pour garantir l'étanchéité et la fluidité des flux.
 
-### 3. Routage & Sécurisation
-*   **Routage Unicast IPv6** : Activation et configuration du transfert de paquets IPv6 au niveau global du routeur.
-*   **Dual-Stack** : Implémentation simultanée des deux protocoles (IPv4/IPv6) pour assurer une transition transparente sans interruption de service.
-*   **Diagnostic Avancé** : Analyse des tables de routage (`show ipv6 route`) et validation par tests de connectivité de bout en bout.
+## ✅ Validation du Projet
+La réussite de l'infrastructure est confirmée par des tests de connectivité de bout en bout entre tous les segments du réseau.
 
-## ✅ Résultats & Validation
-*   **Connectivité 100% opérationnelle** sur l'ensemble des segments réseau.
-*   **Table de routage saine** et optimisée pour une maintenance facilitée.
-*   **Infrastructure "Future-Proof"**, prête pour les nouveaux services internet et IoT.
+![Test Ping IPv6](../ping-ipv6.png)
+*Succès des tests de Ping en IPv6 validant la communication entre le PC1 et les réseaux distants.*
 
 ---
 [⬅️ Retour à l'accueil](../README.md)

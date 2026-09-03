@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+
+    <!-- Animated background -->
+    <div class="bg-grid"></div>
+    <div class="bg-glow bg-glow--1"></div>
+    <div class="bg-glow bg-glow--2"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="{{ '/' | relative_url }}" class="nav-logo">
+            <span class="nav-logo__icon">🛡️</span>
+            <span class="nav-logo__text">Franck <strong>DEFFO</strong></span>
+        </a>
+        <div class="nav-links">
+            <a href="{{ '/' | relative_url }}">Accueil</a>
+            <a href="{{ '/' | relative_url }}#projects">Projets</a>
+            <a href="{{ '/' | relative_url }}#certifications">Certifications</a>
+            <a href="mailto:franckdeffo12@gmail.com" class="nav-cta">Me contacter</a>
+        </div>
+        <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Main content -->
+    <main class="main-content">
+        {{ content }}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <span class="nav-logo__icon">🛡️</span>
+                <span>Franck <strong>DEFFO</strong></span>
+                <p class="footer-tagline">Ingénierie Cybersécurité · Infrastructures SI · AMOA</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/franck-deffo" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/Franck922" target="_blank" rel="noopener">GitHub</a>
+                <a href="mailto:franckdeffo12@gmail.com">Email</a>
+            </div>
+            <p class="footer-copy">© 2026 Franck DEFFO — Portfolio Cybersécurité</p>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .section-title, .hero, .stat-item, .cert-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

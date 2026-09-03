@@ -1,77 +1,89 @@
-# 🛡️ Franck DEFFO | Portfolio Ingénierie Cybersécurité & Réseaux
-> Étudiant Bachelor 3 ECE Paris | Junior Cybersecurity Analyst (Cisco Certified)
+<div align="center">
+  
+# 🛡️ Franck DEFFO
+**Ingénierie Cybersécurité | Infrastructures SI | AMOA**
 
-Bienvenue sur ma plateforme de réalisations techniques. Ce portfolio est conçu comme une documentation vivante de mes compétences opérationnelles. De la conception d'architectures réseaux résilientes à la mise en œuvre de centres de surveillance (SOC), chaque projet ici démontre une capacité à résoudre des problématiques complexes de sécurité et d'infrastructure.
+*Admis en Mastère 1 Cybersécurité à l'EFREI Paris (2026-2028)*<br>
+*À la recherche d'une alternance de 24 mois (Rythme 3 semaines / 1 semaine)*
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/franck-deffo)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Franck922)
+[![Email](https://img.shields.io/badge/Contact-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:franckdeffo12@gmail.com)
+
+</div>
 
 ---
 
-## 🚀 Projets Majeurs & Études de Cas
+Bienvenue sur mon portfolio. Je conçois, déploie et sécurise des infrastructures informatiques et des applications critiques. Passionné par l'interface entre la technique et les besoins métiers (AMOA), ce portfolio documente de manière transparente mes réalisations opérationnelles, de l'architecture réseau à la détection de rançongiciels par Machine Learning.
+
+<div align="center">
+  <h3>🛠️ Stack Technique & Compétences</h3>
+  
+  **Infrastructures & Réseaux**<br>
+  <img src="https://img.shields.io/badge/Windows_Server-0078D6?style=flat-square&logo=windows&logoColor=white" />
+  <img src="https://img.shields.io/badge/Cisco-1BA0D7?style=flat-square&logo=cisco&logoColor=white" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/PostgreSQL-316192?style=flat-square&logo=postgresql&logoColor=white" />
+  <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=flat-square&logo=mongodb&logoColor=white" />
+  <br><br>
+  **Développement & Cybersécurité**<br>
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black" />
+  <img src="https://img.shields.io/badge/React_19-20232A?style=flat-square&logo=react&logoColor=61DAFB" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=FastAPI&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/PowerShell-5391FE?style=flat-square&logo=powershell&logoColor=white" />
+</div>
+
+---
+
+## 🚀 Réalisations Majeures
+
+Les projets ci-dessous démontrent mon approche orientée résultats (Méthode STAR : Situation, Tâche, Action, Résultat).
+
+### 1. [SecureLink : Plateforme Intelligente de Détection de Phishing](./projets/pfe-securelink.md)
+> **Projet de Fin d'Études** | *Conception logicielle, Machine Learning, Architecture Asynchrone*
+
+*   **Situation :** 15% des violations de données impliquent une faille humaine. Les utilisateurs manquent d'outils simples pour vérifier les liens suspects.
+*   **Action :** Conception et développement de bout en bout d'une application web "zéro friction" (Frontend **React 19**, Backend **FastAPI**, Base **MongoDB**) intégrant un moteur de scoring hybride à 12 couches (Machine Learning + Règles heuristiques).
+*   **Résultat :** Atteinte de **100% de précision** sur un benchmark empirique de 74 URLs, avec une architecture garantissant une dégradation gracieuse du système.
+*   👉 **[Lire l'étude de cas complète](./projets/pfe-securelink.md)**
+
+### 2. [Infrastructure EDR & Console SOC : Détection de Rançongiciels](./projets/edr-console-soc.md)
+> **Projet Opérationnel (Substitution)** | *Administration Windows, AMOA, Supervision Sécurité*
+
+*   **Situation :** Nécessité de détecter et bloquer des ransomwares furtifs contournant les antivirus classiques.
+*   **Action :** Déploiement d'un laboratoire Windows sous VMware, collecte de logs poussée (Sysmon) et pilotage du développement d'une console SOC conteneurisée (Docker, PostgreSQL, React). J'ai également rédigé la documentation et les guides de reproduction complets.
+*   **Résultat :** Détection hybride et blocage de la menace en **quelques secondes** via un agent PowerShell de riposte, validé par une suite de 86 tests automatisés End-to-End.
+*   👉 **[Lire l'étude de cas complète](./projets/edr-console-soc.md)**
+
+---
+
+## 🌐 Laboratoires, Gouvernance & Systèmes
+
+Outre mes projets de développement et d'architecture, je cultive une expertise technique de terrain sur les réseaux et l'analyse de risque.
 
 ### 🏦 [SOC & Supervision : Infrastructure Bancaire Critique](./projets/soc-bancaire.md)
-*   **Objectif** : Garantir la disponibilité et la détection d'intrusions sur un environnement bancaire simulé (5 VM).
-*   **Expertise technique** : 
-    *   Déploiement du SIEM **Wazuh** avec activation du **FIM** (File Integrity Monitoring).
-    *   Supervision proactive via **Zabbix** et corrélation de données avec **Grafana**.
-    *   **Détection active** : Analyse d'attaques **Brute Force SSH** et requêtes HTTP malveillantes.
+*   **Réalisation :** Déploiement du SIEM **Wazuh** avec activation du **FIM** (File Integrity Monitoring) et supervision proactive via **Zabbix / Grafana** sur un environnement de 5 VMs.
 
-### 🛡️ [POC Cyber Limited : Conception & Durcissement Infrastructure](./projets/poc-cyberlimited.md)
-*   **Objectif** : Créer et sécuriser de bout en bout l'infrastructure d'une entreprise fictive.
-*   **Expertise technique** : 
-    *   Configuration de **pfSense** comme pare-feu central et passerelle sécurisée.
-    *   Déploiement de l'IDS **Snort** avec règles de détection personnalisées.
-    *   **Hardening** multi-OS : Mise en œuvre de **Fail2ban**, **UFW** et stratégies de groupe (**GPO**).
+### 🛡️ [Analyse de Menaces & Gouvernance (ISO 27005)](./projets/mitre-analyse.md)
+*   **Réalisation :** Études de scénarios industriels (SCADA), mapping offensif des TTPs (MITRE ATT&CK) et élaboration de Plans de Traitement des Risques (PTR).
 
-### 🔐 [TechSecure : Architecture Active Directory & VPN PKI](./projets/ad-vpn.md)
-*   **Objectif** : Créer une infrastructure d'entreprise sécurisée pour le travail nomade.
-*   **Expertise technique** : 
-    *   Administration de **Windows Server 2019** : Configuration **AD DS**, DNS et GPO.
-    *   Sécurisation des accès : Tunnel **OpenVPN** basé sur une **PKI (Easy-RSA)**.
-    *   Isolation réseau : Mise en place de l'étanchéité entre réseaux internes et externes.
-
-### 🛡️ [Analyse de Menaces : Frameworks MITRE ATT&CK & D3FEND](./projets/mitre-analyse.md)
-*   **Objectif** : Modéliser le mode opératoire des attaquants pour définir des stratégies de défense.
-*   **Expertise technique** : 
-    *   Étude du scénario **SCADA** (Réseau industriel) et du système hôtelier.
-    *   Mapping offensif : Identification des techniques (TTPs) et vulnérabilités Kernel.
-    *   Réponse défensive : Préconisation de contre-mesures via **MITRE D3FEND**.
-
----
-
-## 🌐 Bibliothèque de Travaux Pratiques (Expertise Réseaux)
-
-### 🛰️ [Ingénierie Réseaux Cisco & IPv6 Avancé](./projets/tp-reseaux-ipv6.md)
-*   **Concepts clés** : Dual-Stack (IPv4/IPv6), Autoconfiguration **SLAAC**, Routage **OSPF**.
-*   **Réalisation** : Déploiement d'un plan d'adressage **VLSM** optimisant l'espace de 40%.
-
-### 🏗️ [Commutation & Sécurisation LAN](./projets/tp-vlan-stp.md)
-*   **Concepts clés** : **VLAN**, **802.1Q**, **VTP**, **Spanning Tree (STP)**.
-*   **Réalisation** : Topologie redondante sécurisée avec accès distant via **SSHv2**.
-
-### 🔒 [Sécurisation des Flux : VPN IPsec Site-à-Site](./projets/tp-vpn-ipsec.md)
-*   **Concepts clés** : Cryptographie (AES/SHA), ISAKMP, Transform Sets, ACLs.
-*   **Réalisation** : Interconnexion sécurisée de sites distants sur routeurs Cisco.
-
----
-
-## 🐧 Systèmes, Virtualisation & Services
-
-### 📂 [Gestion d'Annuaire & Authentification](./projets/tp-ldap-auth.md)
-*   **Travaux** : Mise en œuvre d'**OpenLDAP** sous Linux et analyse des journaux d'authentification.
-
-### 🕸️ [Virtualisation & Services Web](./projets/tp-virtualisation-apache.md)
-*   **Travaux** : Configuration de routeurs Linux sous **VMware** et sécurisation de serveurs **Apache2**.
+### 🛰️ [Ingénierie Réseaux Cisco & Durcissement](./projets/tp-reseaux-ipv6.md)
+*   **Réalisation :** Architectures Dual-Stack (IPv4/IPv6), VLANs, VPN IPsec Site-à-Site, déploiement de **pfSense** et pare-feux applicatifs.
+*   **Réalisation :** Administration **Windows Server 2019** (AD DS, GPO).
 
 ---
 
 ## 📜 Certifications & Formations
 
-*   🎓 **Bachelor 3 Cybersécurité & Réseaux** – ECE Paris
+*   🎓 **Mastère 1 Cybersécurité** – EFREI Paris (2026-2028)
+*   🎓 **Bachelor 3 Cybersécurité & Réseaux** – ECE Paris (2025-2026)
 *   🏆 **Cisco Certified** : Junior Cybersecurity Analyst, Cyber Threat Management, Network Defense.
 *   🛡️ **ANSSI** : Certifié SecNumacadémie (Expertise SSI France).
 *   📊 **DataScientest** : Certifié Tech Away Cyber niv2.
 *   🏆 **Google/Coursera** : Foundations of Cybersecurity & Manage Security Risks (2025)
 
 ---
-
-📬 **Contact professionnel :**
-[LinkedIn](https://www.linkedin.com/in/franck-deffo) | [GitHub](https://github.com/Franck922) | [Email](mailto:franckdeffo12@gmail.com)
+<div align="center">
+  <i>« Transformez les menaces en indicateurs de pilotage actionnables. »</i>
+</div>

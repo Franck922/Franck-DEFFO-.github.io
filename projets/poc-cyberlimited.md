@@ -1,50 +1,43 @@
-# 🛡️ POC "Cyber Limited" : Conception & Durcissement d'une Infrastructure Sécurisée
-> Projet de Sécurisation Multi-Systèmes | Keyce Academy | Avril 2025
-
 ---
-### 📄 [Consulter le Rapport Technique Complet (PDF)](../Rapport-Atelier-2-Franck-DEFFO.pdf)
+layout: default
+title: POC Cyber Limited
 ---
 
-## 📝 Contexte du Projet
-L'objectif était de concevoir, déployer et sécuriser l'infrastructure complète d'une entreprise fictive nommée **Cyber Limited**. Ce Proof of Concept (POC) simule un environnement de production où chaque machine est protégée contre les intrusions via une défense en profondeur.
+<div class="project-detail">
 
-## 🏗️ Architecture du Lab (Virtualisation VMware)
-![Topologie Cyber Limited](../cyberlimited-topology.png)
-*Architecture réseau isolée composée de 5 VM (Firewall, Serveurs, Clients) simulant un LAN d'entreprise sécurisé.*
+<span class="card-label">Durcissement & Architecture · 2025</span>
 
-## 🛠️ Réalisations Techniques
+<h1>🛡️ POC Cyber Limited : Création & Durcissement d'une Infrastructure</h1>
 
-### 1. Sécurité Réseau avec pfSense
-J'ai configuré pfSense comme passerelle centrale pour filtrer l'intégralité des flux entrants et sortants du réseau.
+<div class="card-tags">
+    <span class="card-tag">pfSense</span>
+    <span class="card-tag">Snort (IDS)</span>
+    <span class="card-tag">Fail2ban</span>
+    <span class="card-tag">Windows Server</span>
+    <span class="card-tag">Linux / GPO</span>
+</div>
 
-![Dashboard pfSense](../pfsense-dashboard.png)
-*Vue du centre de contrôle pfSense validant l'état des interfaces WAN/LAN et des services actifs.*
+<h2>🎯 Contexte et Objectifs</h2>
 
-![Règles Firewall](../firewall-rules.png)
-*Mise en œuvre de règles de filtrage strictes pour le contrôle du trafic inter-VLAN et la gestion du protocole ICMP.*
+<p>Dans le cadre de l'entreprise fictive "Cyber Limited", la mission était de partir d'une feuille blanche pour concevoir, déployer et surtout <strong>durcir (harden)</strong> l'ensemble de l'infrastructure réseau et système. Le but n'était pas seulement de faire communiquer des machines, mais de garantir un niveau de sécurité "Defense in Depth" (Défense en profondeur).</p>
 
-### 2. Détection d'Intrusions avec Snort (IDS)
-Déploiement de **Snort** sur Ubuntu Server pour l'analyse des paquets en temps réel et la détection de comportements suspects.
+<h2>⚙️ Méthodologie et Actions Menées (Méthode STAR)</h2>
 
-![Alerte Snort](../snort-alert.png)
-*Preuve de détection : Capture d'une alerte ICMP générée en temps réel lors d'un test de pénétration simulé.*
+<ul>
+    <li><strong>Situation :</strong> L'entreprise nécessitait une segmentation réseau stricte (LAN utilisateurs, DMZ pour les services exposés) et un durcissement des systèmes d'exploitation pour prévenir les mouvements latéraux en cas d'intrusion.</li>
+    <li><strong>Tâche :</strong> Concevoir la topologie, configurer le pare-feu de bordure, implémenter la détection d'intrusion réseau (NIDS) et appliquer les politiques de sécurité sur les serveurs Windows et Linux.</li>
+    <li><strong>Action (Architecture Réseau & Pare-feu) :</strong> J'ai déployé <strong>pfSense</strong> comme cœur de réseau. J'ai créé les VLANs nécessaires et écrit des règles de filtrage strictes (Default Deny) limitant les flux inter-zones au strict nécessaire.</li>
+    <li><strong>Action (Détection d'Intrusion) :</strong> J'ai configuré <strong>Snort</strong> sur l'interface WAN de pfSense pour détecter les signatures d'attaques connues, et j'ai installé <strong>Fail2ban</strong> sur les serveurs exposés pour bannir automatiquement les adresses IP tentant des attaques par force brute.</li>
+    <li><strong>Action (Durcissement Système) :</strong> Sur la partie Windows, j'ai implémenté des <strong>GPO (Group Policy Objects)</strong> contraignantes (complexité des mots de passe, désactivation des protocoles obsolètes comme SMBv1, restrictions LAPS). Sur Linux, j'ai configuré le pare-feu local (iptables/ufw) et durci la configuration SSH.</li>
+</ul>
 
-### 3. Durcissement des Systèmes (Hardening)
-Application de mesures proactives pour réduire la surface d'attaque des serveurs et postes clients.
+<h2>📈 Résultats et Impact</h2>
 
-![Configuration Fail2ban](../fail2ban-config.png)
-*Mise en place de Fail2ban sur Linux pour automatiser le bannissement des IP tentant des attaques par force brute SSH.*
+<div class="card-result">✅ <strong>Segmentation validée :</strong> Réussite des tests d'étanchéité entre la DMZ et le LAN interne.</div>
+<div class="card-result">✅ <strong>Audits de sécurité passés :</strong> La politique de mot de passe et le durcissement réseau ont bloqué efficacement les tests d'intrusion basiques simulés.</div>
 
-## 🛡️ Tests de Sécurité & Pentest
-Pour valider l'efficacité des protections, des tests d'intrusion ont été menés :
-*   **Scans de ports (Nmap)** : Confirmation de la fermeture des ports non essentiels.
-*   **Brute Force SSH** : Validation du blocage automatique par Fail2ban.
-*   **Ping Floods** : Test de résistance aux dénis de service (DoS).
+<p><strong>Conclusion :</strong> Ce Proof of Concept (POC) démontre ma maîtrise concrète de l'administration système et réseau orientée sécurité. Je suis capable d'appliquer les principes du moindre privilège et de la défense en profondeur sur des environnements hétérogènes (Windows/Linux).</p>
 
-## ✅ Résultats
-*   Infrastructure 100% isolée et résiliente face aux menaces réseau courantes.
-*   Visibilité complète sur les tentatives d'intrusion via l'IDS.
-*   Maîtrise du cycle complet : Installation ➔ Configuration ➔ Durcissement ➔ Validation.
+<a href="{{ '/' | relative_url }}" class="back-link">← Retour au portfolio</a>
 
----
-[⬅️ Retour à l'accueil](../README.md)
+</div>

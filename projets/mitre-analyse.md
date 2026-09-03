@@ -1,46 +1,43 @@
-# 🛡️ Analyse Offensive & Stratégies de Défense (MITRE ATT&CK & D3FEND)
-> Étude de Cas Cybersécurité Multi-Secteurs | Keyce Academy
-
 ---
-### 📄 [Consulter le Rapport d'Analyse Complet (PDF)](../Rapport-MITRE-Franck-DEFFO.pdf)
+layout: default
+title: Analyse de Menaces MITRE ATT&CK
 ---
 
-## 📝 Objectif de l'Étude
-Ce projet visait à modéliser le mode opératoire d'attaquants à travers deux scénarios réalistes. L'objectif était de décomposer chaque phase de l'attaque (Offensif) pour en déduire les contre-mesures les plus efficaces (Défensif).
+<div class="project-detail">
 
----
+<span class="card-label card-label--cyan">Gouvernance & Cyber Threat Intelligence · Janvier 2026</span>
 
-## ⚡ Scénario : Ransomware sur Réseau Industriel (SCADA)
-L'attaque simulée visait une infrastructure de distribution d'énergie, démontrant la criticité de la protection des systèmes industriels (OT).
+<h1>🛡️ Analyse de Menaces : Modélisation via MITRE ATT&CK & D3FEND</h1>
 
-![Kill Chain SCADA](../scada-attack-chain.png)
-*Modélisation des phases d'attaque : du Phishing initial au déploiement final du ransomware sur les systèmes de contrôle.*
+<div class="card-tags">
+    <span class="card-tag--cyan card-tag">MITRE ATT&CK</span>
+    <span class="card-tag--cyan card-tag">MITRE D3FEND</span>
+    <span class="card-tag--cyan card-tag">SCADA (ICS)</span>
+    <span class="card-tag--cyan card-tag">CTI</span>
+    <span class="card-tag--cyan card-tag">ISO 27005</span>
+</div>
 
-### Analyse du Mode Opératoire
-1.  **Infiltration** : Campagne de **Spear Phishing** ciblant un technicien avec une pièce jointe malveillante.
-2.  **Mouvement Latéral** : Exploitation de failles de partage réseau pour atteindre les serveurs critiques SCADA.
-3.  **Impact** : Chiffrement des systèmes de gestion et paralysie du réseau.
+<h2>🎯 Contexte et Objectifs</h2>
 
----
+<p>Comprendre "comment" un attaquant opère est le prérequis indispensable pour défendre un système efficacement. Ce projet de recherche appliquée consistait à analyser des attaques réelles ciblant des secteurs critiques (Systèmes industriels SCADA et domaine hôtelier), et à les modéliser en utilisant les standards de l'industrie pour la Cyber Threat Intelligence (CTI).</p>
 
-## 🛡️ Stratégies de Remédiation & Corrélation
-L'utilisation des référentiels MITRE permet de transformer chaque technique offensive en une réponse défensive actionnable.
+<h2>⚙️ Méthodologie et Actions Menées (Méthode STAR)</h2>
 
-![Tableau de Corrélation](../mitre-correlation-table.png)
-*Mapping technique : Corrélation entre les techniques d'attaque identifiées et les contre-mesures préconisées par le framework D3FEND.*
+<ul>
+    <li><strong>Situation :</strong> Face à des scénarios d'attaques complexes (ex: APT ciblant un réseau électrique industriel), il fallait décomposer l'attaque pour identifier précisément les failles exploitées et proposer des contre-mesures adaptées.</li>
+    <li><strong>Tâche :</strong> Maper (cartographier) les comportements offensifs sur la matrice MITRE ATT&CK, évaluer l'impact via la méthode ISO 27005, et concevoir une architecture défensive avec MITRE D3FEND.</li>
+    <li><strong>Action (Modélisation Offensive - ATT&CK) :</strong> J'ai décomposé le cycle de vie de l'attaque en Tactics, Techniques, and Procedures (TTPs). J'ai retracé le parcours de l'attaquant : depuis l'accès initial (Phishing, exploitation d'équipement frontal) jusqu'à l'impact (manipulation de systèmes de contrôle SCADA, exfiltration), en passant par l'élévation de privilèges.</li>
+    <li><strong>Action (Évaluation des Risques - ISO 27005) :</strong> J'ai quantifié les conséquences de ces TTPs sur les processus métiers (perte de disponibilité de l'usine, fuite de données clients de l'hôtel) pour prioriser les chantiers de sécurisation.</li>
+    <li><strong>Action (Modélisation Défensive - D3FEND) :</strong> Face à chaque technique identifiée, j'ai sélectionné les contre-mesures techniques appropriées dans la matrice D3FEND (ex: analyse comportementale des processus, segmentation réseau OT/IT, durcissement des authentifications).</li>
+</ul>
 
-### Préconisations de Résilience
-*   **Segmentation IT/OT** : Isolation du réseau industriel.
-*   **Credential Hardening** : Mise en œuvre du MFA et rotation des identifiants.
-*   **Sauvegardes Hors-Ligne** : Stratégie de backup immuable pour garantir la reprise d'activité sans paiement de rançon.
+<h2>📈 Résultats et Impact</h2>
 
----
+<div class="card-result">✅ Livrable : <strong>Kill Chain complète</strong> documentée pour des scénarios ICS/SCADA.</div>
+<div class="card-result">✅ Livrable : <strong>Matrice d'atténuation</strong> corrélant directement l'attaque (ATT&CK) à la défense (D3FEND).</div>
 
-## ✅ Conclusion du Projet
-L'approche par les frameworks mondiaux garantit une vision structurée de la menace et permet de prioriser les investissements de sécurité.
+<p><strong>Conclusion :</strong> Ce travail d'analyse m'a doté d'une forte capacité de modélisation des menaces (Threat Modeling). Je sais désormais exploiter des bases de connaissances CTI pour orienter l'architecture de sécurité, transformer la donnée de renseignement en actions techniques concrètes, et aligner ces choix avec la stratégie globale des risques (ISO 27005).</p>
 
-![Conclusion Plan Action](../mitre-conclusion.png)
-*Synthèse de l'étude démontrant l'efficacité d'un plan d'action fondé sur la résilience et la détection proactive.*
+<a href="{{ '/' | relative_url }}" class="back-link">← Retour au portfolio</a>
 
----
-[⬅️ Retour à l'accueil](../README.md)
+</div>

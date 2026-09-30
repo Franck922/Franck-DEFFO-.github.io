@@ -45,7 +45,7 @@ description: Segmentation VLAN, routage OSPF, NAT et tunnel IPsec site à site s
 <div class="card-result">📎 <a href="{{ '/docs/rapport-ospf-tp6.pdf' | relative_url }}">Routage dynamique OSPF (PDF)</a></div>
 <div class="card-result">📎 <a href="{{ '/docs/rapport-vlan-stp-lab2.pdf' | relative_url }}">Segmentation VLAN et Spanning Tree (PDF)</a></div>
 <div class="card-result">📎 <a href="{{ '/docs/rapport-ipv6-lab3.pdf' | relative_url }}">Mise en œuvre IPv6 (PDF)</a></div>
-<div class="card-result">📎 <a href="{{ '/Projets/tp-reseaux-ipv6' | relative_url }}">Adressage VLSM et transition IPv6, page détaillée</a></div>
+<div class="card-result">📎 <a href="{{ '/projets/tp-reseaux-ipv6.html' | relative_url }}">Adressage VLSM et transition IPv6, page détaillée</a></div>
 
 <a href="{{ '/' | relative_url }}" class="back-link">← Retour au portfolio</a>
 

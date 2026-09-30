@@ -4,447 +4,442 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Franck DEFFO · Cybersécurité, Infrastructures &amp; Développement</title>
-<meta name="description" content="Étudiant en Master Cybersécurité à l'EFREI Paris. Portfolio technique : développement web, sécurité opérationnelle, infrastructures et gouvernance SSI.">
+<meta name="description" content="Étudiant en Master Cybersécurité à l'EFREI Paris, en recherche d'alternance. Treize projets documentés en sécurité opérationnelle, infrastructures, développement et gouvernance SSI.">
+<meta name="author" content="Franck DEFFO">
+<meta property="og:title" content="Franck DEFFO · Portfolio Cybersécurité">
+<meta property="og:description" content="Treize projets documentés en sécurité opérationnelle, infrastructures, développement et gouvernance SSI.">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg-primary:#f8fafc; --bg-secondary:#ffffff; --bg-card:#ffffff;
-  --border-light:#e2e8f0; --border-hover:#cbd5e1;
-  --text-primary:#0f172a; --text-secondary:#475569; --text-muted:#64748b;
-  --accent-blue:#4f46e5; --accent-blue-hover:#4338ca;
-  --accent-cyan:#0284c7; --accent-purple:#6366f1;
-  --accent-green:#059669; --accent-amber:#d97706;
-  --font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --font-mono:'JetBrains Mono','Fira Code',monospace;
-  --radius-sm:8px; --radius-md:12px; --radius-lg:20px;
-  --shadow-sm:0 1px 2px 0 rgba(0,0,0,.05);
-  --shadow-card:0 4px 6px -1px rgba(0,0,0,.05),0 2px 4px -2px rgba(0,0,0,.05);
-  --shadow-hover:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);
-  --transition:.3s ease; --max-width:1100px;
+  --bg:#08090a; --bg2:#0c0d0f; --surf:#121316; --surf2:#181a1e;
+  --line:#22252a; --line2:#2e3238;
+  --tx:#f3f4f6; --tx2:#a5acb6; --tx3:#6d747e;
+  --ac:#3ecf8e; --ac-d:#2fa771; --ac-g:rgba(62,207,142,.12);
+  --dev:#3ecf8e; --sec:#fb7185; --inf:#a78bfa; --gov:#fbbf24;
+  --disp:'Space Grotesk',system-ui,sans-serif;
+  --body:'Inter',system-ui,-apple-system,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --r:10px; --r2:16px; --r3:24px; --mw:1180px;
+  --ease:cubic-bezier(.22,1,.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.65;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{background:var(--bg);color:var(--tx);font-family:var(--body);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--max-width);margin:0 auto;padding:0 24px}
-.mono{font-family:var(--font-mono)}
+img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+.wrap{max-width:var(--mw);margin:0 auto;padding:0 24px}
+.mono{font-family:var(--mono)}
+::selection{background:var(--ac);color:#04120c}
 
-nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
-.brand{font-weight:700;font-size:16px;letter-spacing:-.2px}
-.brand span{color:var(--accent-blue)}
-.nav-links{display:flex;gap:28px;font-size:14.5px;color:var(--text-secondary);font-weight:500}
-.nav-links a:hover{color:var(--accent-blue)}
-.nav-cta{font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:var(--radius-sm);background:var(--accent-blue);color:#fff;white-space:nowrap;transition:var(--transition)}
-.nav-cta:hover{background:var(--accent-blue-hover)}
-@media(max-width:860px){.nav-links{display:none}}
+/* ---------- barre de progression ---------- */
+#prog{position:fixed;top:0;left:0;height:2px;width:0;background:linear-gradient(90deg,var(--ac),#7dd3fc);z-index:120;transition:width .1s linear}
 
-header{padding:76px 0 60px;position:relative;overflow:hidden}
-header::before{content:'';position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:900px;height:460px;border-radius:50%;background:radial-gradient(closest-side,rgba(99,102,241,.09),transparent 70%);pointer-events:none}
-.badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--accent-blue);background:rgba(79,70,229,.08);border:1px solid rgba(79,70,229,.2);padding:7px 15px;border-radius:999px;margin-bottom:24px}
-.dot{width:7px;height:7px;border-radius:50%;background:var(--accent-green);box-shadow:0 0 0 0 rgba(5,150,105,.5);animation:p 2.2s infinite}
-@keyframes p{70%{box-shadow:0 0 0 9px rgba(5,150,105,0)}100%{box-shadow:0 0 0 0 rgba(5,150,105,0)}}
-h1{font-size:clamp(34px,5.4vw,54px);line-height:1.12;font-weight:800;letter-spacing:-1.4px;margin-bottom:20px;color:var(--text-primary)}
-h1 em{font-style:normal;background:linear-gradient(100deg,var(--accent-blue),var(--accent-cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lede{font-size:clamp(15.5px,1.7vw,18px);color:var(--text-secondary);max-width:740px;margin-bottom:12px}
-.lede strong{color:var(--text-primary);font-weight:600}
-.rythme{font-size:14.5px;color:var(--text-muted);margin-bottom:32px}
-.rythme b{color:var(--accent-green);font-weight:600}
-.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:48px}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:var(--radius-sm);font-size:14.5px;font-weight:600;border:1px solid var(--border-light);background:var(--bg-secondary);color:var(--text-primary);box-shadow:var(--shadow-sm);transition:var(--transition)}
-.btn:hover{border-color:var(--accent-blue);color:var(--accent-blue);transform:translateY(-1px);box-shadow:var(--shadow-card)}
-.btn.primary{background:var(--accent-blue);color:#fff;border-color:var(--accent-blue)}
-.btn.primary:hover{background:var(--accent-blue-hover);color:#fff}
+/* ---------- navigation ---------- */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;height:68px;display:flex;align-items:center;transition:background .35s,border-color .35s,backdrop-filter .35s;border-bottom:1px solid transparent}
+nav.on{background:rgba(8,9,10,.82);backdrop-filter:blur(14px);border-bottom-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;width:100%}
+.brand{font-family:var(--disp);font-weight:700;font-size:15.5px;letter-spacing:-.2px;display:flex;align-items:center;gap:9px}
+.brand i{width:9px;height:9px;border-radius:2px;background:var(--ac);display:block;box-shadow:0 0 12px var(--ac)}
+.nlinks{display:flex;gap:4px}
+.nlinks a{font-size:13.5px;font-weight:500;color:var(--tx2);padding:7px 13px;border-radius:8px;transition:color .2s,background .2s;position:relative}
+.nlinks a:hover{color:var(--tx);background:var(--surf)}
+.nlinks a.act{color:var(--ac)}
+.nlinks a.act::after{content:'';position:absolute;left:13px;right:13px;bottom:2px;height:1.5px;background:var(--ac);border-radius:2px}
+.ncta{font-family:var(--mono);font-size:12.5px;font-weight:700;padding:9px 16px;border-radius:8px;background:var(--ac);color:#04120c;transition:transform .2s,box-shadow .2s;white-space:nowrap}
+.ncta:hover{transform:translateY(-1px);box-shadow:0 8px 24px -8px var(--ac)}
+.burger{display:none;width:38px;height:38px;border-radius:9px;border:1px solid var(--line);align-items:center;justify-content:center;flex-direction:column;gap:4px}
+.burger span{width:16px;height:1.5px;background:var(--tx2);border-radius:2px;transition:.25s}
+@media(max-width:900px){
+  .nlinks{position:fixed;inset:68px 0 auto 0;flex-direction:column;background:rgba(8,9,10,.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);padding:14px 24px 22px;gap:2px;display:none}
+  .nlinks.open{display:flex}
+  .nlinks a{padding:12px 4px;font-size:15px}
+  .nlinks a.act::after{display:none}
+  .burger{display:flex}
+  .ncta{display:none}
+}
 
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
-.stat{background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:22px 20px;box-shadow:var(--shadow-sm)}
-.stat .n{font-size:28px;font-weight:800;color:var(--accent-blue);letter-spacing:-1px;line-height:1.1}
-.stat .l{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;margin-top:6px;font-weight:600}
+/* ---------- hero ---------- */
+header{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;padding:112px 0 104px;overflow:hidden}
+#net{position:absolute;inset:0;width:100%;height:100%;opacity:.62}
+header::after{content:'';position:absolute;inset:0;background:radial-gradient(1000px 520px at 50% 12%,transparent,var(--bg) 78%),linear-gradient(to bottom,transparent 55%,var(--bg));pointer-events:none}
+header .wrap{position:relative;z-index:2}
+.dispo{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ac);background:var(--ac-g);border:1px solid rgba(62,207,142,.26);padding:7px 14px;border-radius:99px;margin-bottom:28px}
+.pulse{width:6px;height:6px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 0 rgba(62,207,142,.6);animation:pl 2.4s infinite}
+@keyframes pl{70%{box-shadow:0 0 0 8px rgba(62,207,142,0)}100%{box-shadow:0 0 0 0 rgba(62,207,142,0)}}
+h1{font-family:var(--disp);font-size:clamp(40px,8.2vw,88px);line-height:.98;font-weight:700;letter-spacing:-.035em;margin-bottom:22px}
+h1 span{display:block}
+h1 .l2{color:var(--tx3)}
+.typed{font-family:var(--mono);font-size:clamp(14px,2vw,17px);color:var(--ac);min-height:1.6em;margin-bottom:20px;letter-spacing:-.01em}
+.caret{display:inline-block;width:9px;height:1.05em;background:var(--ac);vertical-align:-3px;margin-left:3px;animation:bl 1.05s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.lede{font-size:clamp(15px,1.75vw,17.5px);color:var(--tx2);max-width:620px;margin-bottom:14px}
+.lede b{color:var(--tx);font-weight:600}
+.rythme{font-family:var(--mono);font-size:13px;color:var(--tx3);margin-bottom:34px}
+.rythme b{color:var(--ac);font-weight:500}
+.cta{display:flex;flex-wrap:wrap;gap:11px;margin-bottom:56px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 20px;border-radius:var(--r);font-size:14px;font-weight:600;border:1px solid var(--line2);background:var(--surf);color:var(--tx);transition:.25s var(--ease)}
+.btn:hover{border-color:var(--ac);color:var(--ac);transform:translateY(-2px)}
+.btn.pri{background:var(--ac);border-color:var(--ac);color:#04120c}
+.btn.pri:hover{background:#4ee0a0;border-color:#4ee0a0;color:#04120c;box-shadow:0 12px 34px -12px var(--ac)}
+.btn svg{width:16px;height:16px;flex:none}
+.scroll-cue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:2;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);display:flex;flex-direction:column;align-items:center;gap:9px}
+.scroll-cue i{width:1px;height:34px;background:linear-gradient(var(--tx3),transparent);display:block;animation:dn 2s ease-in-out infinite}
+@keyframes dn{0%,100%{opacity:.25;transform:scaleY(.7)}50%{opacity:1;transform:scaleY(1)}}
+@media(max-width:860px){.scroll-cue{display:none}header{padding-bottom:56px}}
+@media(max-height:820px){.scroll-cue{display:none}}
 
-section{padding:70px 0;border-top:1px solid var(--border-light)}
-.sec-head{margin-bottom:36px}
-.kicker{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--accent-blue);margin-bottom:10px}
-h2{font-size:clamp(26px,3.4vw,34px);font-weight:800;letter-spacing:-.9px;margin-bottom:10px}
-.sec-sub{color:var(--text-secondary);font-size:15.5px;max-width:700px}
+/* ---------- compteurs ---------- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
+.st{background:var(--bg2);padding:22px 20px;transition:background .3s}
+.st:hover{background:var(--surf)}
+.st .n{font-family:var(--disp);font-size:clamp(24px,3.4vw,34px);font-weight:700;letter-spacing:-.03em;color:var(--tx);line-height:1}
+.st .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--tx3);margin-top:8px}
+@media(max-width:760px){.stats{grid-template-columns:repeat(2,1fr)}}
 
-.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
-.stack-card{background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:24px;box-shadow:var(--shadow-card)}
-.stack-card h3{font-size:13px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px}
-.ic{width:28px;height:28px;border-radius:var(--radius-sm);display:grid;place-items:center;font-size:13px}
-.ic.c1{background:rgba(79,70,229,.1);color:var(--accent-blue)}
-.ic.c2{background:rgba(2,132,199,.1);color:var(--accent-cyan)}
-.ic.c3{background:rgba(5,150,105,.1);color:var(--accent-green)}
-.tags{display:flex;flex-wrap:wrap;gap:7px}
-.tag{font-family:var(--font-mono);font-size:11.5px;padding:5px 10px;border-radius:6px;background:var(--bg-primary);border:1px solid var(--border-light);color:var(--text-secondary)}
-.tag.hot{border-color:rgba(79,70,229,.3);color:var(--accent-blue);background:rgba(79,70,229,.05);font-weight:600}
+/* ---------- sections ---------- */
+section{padding:104px 0;position:relative}
+.sechead{margin-bottom:46px;max-width:660px}
+.kick{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ac);margin-bottom:14px}
+.kick::before{content:'';width:22px;height:1px;background:var(--ac)}
+h2{font-family:var(--disp);font-size:clamp(28px,4.4vw,44px);font-weight:700;letter-spacing:-.03em;line-height:1.08;margin-bottom:14px}
+.subh{color:var(--tx2);font-size:15.5px}
+.rule{height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
 
-.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px}
-.filter{font-size:13.5px;font-weight:600;padding:9px 17px;border-radius:999px;background:var(--bg-secondary);border:1px solid var(--border-light);color:var(--text-secondary);cursor:pointer;transition:var(--transition);font-family:inherit;box-shadow:var(--shadow-sm)}
-.filter:hover{border-color:var(--border-hover);color:var(--text-primary)}
-.filter[aria-pressed="true"]{background:var(--accent-blue);border-color:var(--accent-blue);color:#fff}
+/* ---------- bandeau défilant ---------- */
+.marq{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:15px 0;overflow:hidden;background:var(--bg2)}
+.marq-in{display:flex;gap:44px;width:max-content;animation:mv 42s linear infinite}
+.marq:hover .marq-in{animation-play-state:paused}
+@keyframes mv{to{transform:translateX(-50%)}}
+.marq span{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--tx3);white-space:nowrap;display:flex;align-items:center;gap:44px}
+.marq span::after{content:'';width:4px;height:4px;border-radius:50%;background:var(--line2)}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px}
-.proj{background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:26px;display:flex;flex-direction:column;transition:var(--transition);box-shadow:var(--shadow-card)}
-.proj:hover{border-color:var(--border-hover);transform:translateY(-3px);box-shadow:var(--shadow-hover)}
-.proj.feat{border-color:rgba(79,70,229,.28);background:linear-gradient(165deg,rgba(99,102,241,.04),var(--bg-card) 55%)}
-.proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
-.cat{font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;padding:4px 9px;border-radius:5px;white-space:nowrap}
-.cat.dev{background:rgba(79,70,229,.1);color:var(--accent-blue)}
-.cat.sec{background:rgba(2,132,199,.1);color:var(--accent-cyan)}
-.cat.infra{background:rgba(5,150,105,.1);color:var(--accent-green)}
-.cat.gov{background:rgba(217,119,6,.1);color:var(--accent-amber)}
-.date{font-size:11.5px;color:var(--text-muted);white-space:nowrap;font-family:var(--font-mono)}
-.proj h3{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:10px;letter-spacing:-.3px}
-.proj p{font-size:14.5px;color:var(--text-secondary);margin-bottom:15px;flex-grow:1}
-.kpi{font-size:12.5px;color:var(--accent-green);font-weight:600;padding:10px 13px;background:rgba(5,150,105,.05);border-left:3px solid var(--accent-green);border-radius:0 6px 6px 0;margin-bottom:15px}
-.proj .tags{margin-bottom:17px}
-.links{display:flex;flex-wrap:wrap;gap:16px;font-size:13.5px;font-weight:600;padding-top:15px;border-top:1px solid var(--border-light)}
-.links a{color:var(--accent-blue)}
-.links a:hover{color:var(--accent-blue-hover)}
-.links .muted{color:var(--text-muted);font-weight:500;cursor:default}
+/* ---------- stack ---------- */
+.stack{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:860px){.stack{grid-template-columns:1fr}}
+.scard{background:var(--surf);border:1px solid var(--line);border-radius:var(--r2);padding:26px;transition:border-color .3s,transform .3s var(--ease)}
+.scard:hover{border-color:var(--line2);transform:translateY(-3px)}
+.scard h3{font-family:var(--disp);font-size:16px;font-weight:600;display:flex;align-items:center;gap:11px;margin-bottom:6px}
+.scard .cnt{font-family:var(--mono);font-size:10.5px;color:var(--tx3);margin-left:auto;font-weight:400}
+.scard p{font-size:13.5px;color:var(--tx3);margin-bottom:20px}
+.dot{width:8px;height:8px;border-radius:2px;flex:none}
+.logos{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:9px}
+.lg{background:var(--surf2);border:1px solid var(--line);border-radius:var(--r);padding:13px 6px 9px;display:flex;flex-direction:column;align-items:center;gap:8px;transition:.25s var(--ease);cursor:default}
+.lg:hover{border-color:var(--line2);transform:translateY(-3px);background:#1d2025}
+.lg svg{width:26px;height:26px;display:block}
+.lg{transition:.25s var(--ease)}
+.lg svg,.lg em{transition:transform .25s var(--ease)}
+.lg:hover svg{transform:scale(1.12)}
+.lg .mono-ic{min-width:26px;height:26px;padding:0 6px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;font-weight:700;color:#04120c;letter-spacing:-.02em}
+.lg .mono-ic.sm{font-size:9px}
+.lg em{font-style:normal;font-family:var(--mono);font-size:9.5px;color:var(--tx3);text-align:center;line-height:1.3;letter-spacing:-.01em}
+.lg:hover em{color:var(--tx2)}
 
-.tl{position:relative;padding-left:30px}
-.tl::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--border-light)}
-.tl-item{position:relative;padding-bottom:30px}
-.tl-item:last-child{padding-bottom:0}
-.tl-item::before{content:'';position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg-primary);border:2.5px solid var(--accent-blue)}
-.tl-item h3{font-size:17px;font-weight:700;margin-bottom:4px}
-.tl-meta{font-size:13px;color:var(--text-muted);margin-bottom:8px;font-family:var(--font-mono)}
-.tl-item p{font-size:14.5px;color:var(--text-secondary)}
+/* ---------- projets ---------- */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px}
+.f{font-family:var(--mono);font-size:12px;font-weight:500;padding:8px 15px;border-radius:99px;background:var(--surf);border:1px solid var(--line);color:var(--tx2);transition:.22s}
+.f:hover{border-color:var(--line2);color:var(--tx)}
+.f[aria-pressed="true"]{background:var(--ac);border-color:var(--ac);color:#04120c;font-weight:700}
+.f b{opacity:.55;font-weight:500;margin-left:5px}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:860px){.grid{grid-template-columns:1fr}}
+.proj{background:var(--surf);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden;display:flex;flex-direction:column;transition:border-color .3s,transform .35s var(--ease),box-shadow .35s;opacity:1}
+.proj:hover{border-color:var(--line2);transform:translateY(-4px);box-shadow:0 24px 60px -32px #000}
+.proj.wide{grid-column:span 2}
+@media(max-width:860px){.proj.wide{grid-column:span 1}}
+.shot{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--bg2);border-bottom:1px solid var(--line);cursor:zoom-in}
+.shot img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .7s var(--ease),filter .4s;filter:saturate(.92)}
+.proj:hover .shot img{transform:scale(1.045);filter:saturate(1)}
+.shot::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(8,9,10,.55),transparent 55%);pointer-events:none}
+.shot .zoom{position:absolute;right:11px;bottom:11px;z-index:2;font-family:var(--mono);font-size:10px;letter-spacing:.06em;text-transform:uppercase;background:rgba(8,9,10,.78);backdrop-filter:blur(6px);border:1px solid var(--line2);color:var(--tx2);padding:5px 10px;border-radius:7px;opacity:0;transform:translateY(5px);transition:.28s}
+.proj:hover .shot .zoom{opacity:1;transform:none}
+.shot .count{position:absolute;left:11px;bottom:11px;z-index:2;font-family:var(--mono);font-size:10px;background:rgba(8,9,10,.78);backdrop-filter:blur(6px);border:1px solid var(--line2);color:var(--tx2);padding:5px 9px;border-radius:7px}
+/* couverture générée si pas de capture */
+.cover{position:relative;aspect-ratio:16/9;border-bottom:1px solid var(--line);overflow:hidden;display:flex;align-items:center;justify-content:center;background:
+  radial-gradient(420px 200px at 78% 12%,var(--gl),transparent 70%),
+  linear-gradient(145deg,#101215,#0a0b0d);}
+.cover .gridbg{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:34px 34px;opacity:.5;mask-image:radial-gradient(circle at 50% 50%,#000,transparent 78%)}
+.cover svg{position:relative;width:74px;height:74px;opacity:.9}
+.pbody{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.ptop{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.cat{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:4px 9px;border-radius:5px}
+.cat.dev{color:var(--dev);background:rgba(62,207,142,.1);border:1px solid rgba(62,207,142,.22)}
+.cat.sec{color:var(--sec);background:rgba(251,113,133,.1);border:1px solid rgba(251,113,133,.22)}
+.cat.inf{color:var(--inf);background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.22)}
+.cat.gov{color:var(--gov);background:rgba(251,191,36,.1);border:1px solid rgba(251,191,36,.22)}
+.dt{font-family:var(--mono);font-size:10.5px;color:var(--tx3);white-space:nowrap}
+.proj h3{font-family:var(--disp);font-size:18.5px;font-weight:600;letter-spacing:-.02em;line-height:1.25;margin-bottom:10px}
+.proj.wide h3{font-size:22px}
+.proj p{font-size:14px;color:var(--tx2);margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.tg{font-family:var(--mono);font-size:10.5px;color:var(--tx3);background:var(--surf2);border:1px solid var(--line);padding:3.5px 8px;border-radius:5px}
+.links{margin-top:auto;padding-top:15px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:16px}
+.links a{font-family:var(--mono);font-size:12px;font-weight:500;color:var(--ac);display:inline-flex;align-items:center;gap:6px;transition:gap .2s,color .2s}
+.links a:hover{gap:10px;color:#5ee5a5}
+.links a.mut{color:var(--tx3)}
+.links a.mut:hover{color:var(--tx2)}
 
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px}
-@media(max-width:820px){.two-col{grid-template-columns:1fr;gap:48px}}
-.certs{display:flex;flex-direction:column;gap:11px}
-.cert{display:flex;gap:13px;align-items:flex-start;background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:15px 17px;box-shadow:var(--shadow-sm)}
-.cert .cn{font-size:14.5px;font-weight:600;line-height:1.35}
-.cert .co{font-size:12.5px;color:var(--text-muted);margin-top:2px}
+/* ---------- timeline ---------- */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:52px}
+@media(max-width:860px){.two{grid-template-columns:1fr;gap:56px}}
+.tl{position:relative;padding-left:26px}
+.tl::before{content:'';position:absolute;left:4px;top:6px;bottom:6px;width:1px;background:linear-gradient(var(--ac),var(--line) 28%,var(--line))}
+.ti{position:relative;padding-bottom:30px}
+.ti:last-child{padding-bottom:0}
+.ti::before{content:'';position:absolute;left:-26px;top:7px;width:9px;height:9px;border-radius:50%;background:var(--bg);border:1.5px solid var(--line2);transition:.3s}
+.ti:hover::before{border-color:var(--ac);box-shadow:0 0 0 4px var(--ac-g)}
+.ti:first-child::before{background:var(--ac);border-color:var(--ac);box-shadow:0 0 12px var(--ac)}
+.ti h3{font-family:var(--disp);font-size:16px;font-weight:600;letter-spacing:-.015em;margin-bottom:5px}
+.tmeta{font-family:var(--mono);font-size:11.5px;color:var(--ac);margin-bottom:9px}
+.ti p{font-size:14px;color:var(--tx2)}
+.certs{display:grid;gap:9px}
+.cert{display:flex;align-items:center;gap:13px;background:var(--surf);border:1px solid var(--line);border-radius:var(--r);padding:13px 16px;transition:.25s var(--ease)}
+.cert:hover{border-color:var(--line2);transform:translateX(3px)}
+.cert .chk{width:22px;height:22px;border-radius:6px;background:var(--ac-g);border:1px solid rgba(62,207,142,.25);display:flex;align-items:center;justify-content:center;flex:none}
+.cert .chk svg{width:12px;height:12px;stroke:var(--ac);stroke-width:2.6;fill:none}
+.cn{font-size:14px;font-weight:600;letter-spacing:-.01em}
+.co{font-family:var(--mono);font-size:11px;color:var(--tx3);margin-top:2px}
 
-.contact-box{background:linear-gradient(150deg,rgba(99,102,241,.07),var(--bg-card) 60%);border:1px solid rgba(79,70,229,.2);border-radius:var(--radius-lg);padding:48px 36px;text-align:center;box-shadow:var(--shadow-card)}
-.contact-box h2{margin-bottom:12px}
-.contact-box p{color:var(--text-secondary);max-width:560px;margin:0 auto 28px;font-size:15.5px}
-.contact-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+/* ---------- veille ---------- */
+.veille{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.veille{grid-template-columns:1fr}}
+.vc{background:var(--surf);border:1px solid var(--line);border-radius:var(--r2);padding:24px;transition:.3s var(--ease)}
+.vc:hover{border-color:var(--line2);transform:translateY(-3px)}
+.vc h3{font-family:var(--disp);font-size:15.5px;font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.vc>p{font-size:13px;color:var(--tx3);margin-bottom:17px}
+.vl{display:flex;flex-direction:column;gap:2px}
+.vl a,.vl div{display:flex;align-items:baseline;gap:10px;padding:8px 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--tx2);transition:color .2s}
+.vl a:hover{color:var(--ac)}
+.vl .s{font-family:var(--mono);font-size:10px;color:var(--tx3);margin-left:auto;white-space:nowrap}
 
-footer{border-top:1px solid var(--border-light);padding:32px 0;text-align:center;color:var(--text-muted);font-size:13.5px}
-.hidden{display:none !important}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* ---------- contact ---------- */
+.cbox{background:linear-gradient(150deg,var(--surf),var(--bg2));border:1px solid var(--line);border-radius:var(--r3);padding:52px;text-align:center;position:relative;overflow:hidden}
+.cbox::before{content:'';position:absolute;top:-140px;left:50%;transform:translateX(-50%);width:520px;height:280px;background:radial-gradient(closest-side,rgba(62,207,142,.15),transparent);pointer-events:none}
+.cbox h2{margin-bottom:14px}
+.cbox p{color:var(--tx2);max-width:620px;margin:0 auto 30px;font-size:15.5px}
+.clinks{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;position:relative}
+@media(max-width:600px){.cbox{padding:36px 22px}}
+footer{border-top:1px solid var(--line);padding:30px 0;font-family:var(--mono);font-size:11.5px;color:var(--tx3)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+
+/* ---------- lightbox ---------- */
+#lb{position:fixed;inset:0;z-index:200;background:rgba(4,5,6,.95);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;padding:70px 20px 96px}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:100%;object-fit:contain;border-radius:var(--r2);border:1px solid var(--line2);box-shadow:0 40px 120px -30px #000}
+#lb .cap{position:absolute;left:0;right:0;bottom:44px;text-align:center;font-family:var(--mono);font-size:12px;color:var(--tx2);padding:0 20px}
+#lb .idx{position:absolute;top:22px;left:24px;font-family:var(--mono);font-size:12px;color:var(--tx3)}
+#lb .x{position:absolute;top:16px;right:20px;width:40px;height:40px;border-radius:10px;border:1px solid var(--line2);background:var(--surf);display:flex;align-items:center;justify-content:center;font-size:19px;color:var(--tx2);transition:.2s}
+#lb .x:hover{border-color:var(--ac);color:var(--ac)}
+#lb .ar{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--line2);background:rgba(18,19,22,.9);display:flex;align-items:center;justify-content:center;color:var(--tx2);font-size:18px;transition:.2s}
+#lb .ar:hover{border-color:var(--ac);color:var(--ac)}
+#lb .pv{left:20px}#lb .nx{right:20px}
+
+/* ---------- révélation ---------- */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .75s var(--ease),transform .75s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}
+  .marq-in{animation:none}
+  .caret{animation:none}
+  html{scroll-behavior:auto}
+}
 </style>
 </head>
 <body>
 
-<nav>
+<div id="prog"></div>
+
+<nav id="nav">
   <div class="wrap">
-    <a href="#" class="brand">Franck <span>DEFFO</span></a>
-    <div class="nav-links">
-      <a href="#stack">Stack</a>
+    <a href="#" class="brand"><i></i>Franck DEFFO</a>
+    <div class="nlinks" id="nl">
+      <a href="#stack">Compétences</a>
       <a href="#projets">Projets</a>
       <a href="#parcours">Parcours</a>
-      <a href="#formation">Formation</a>
+      <a href="#veille">Veille</a>
+      <a href="#contact">Contact</a>
     </div>
-    <a href="#contact" class="nav-cta">Me contacter</a>
+    <a href="#contact" class="ncta">Me recruter</a>
+    <button class="burger" id="bg" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <header>
+  <canvas id="net"></canvas>
   <div class="wrap">
-    <div class="badge"><span class="dot"></span> Recherche une alternance · Disponible immédiatement</div>
-    <h1>Je conçois, développe<br>et sécurise des <em>systèmes d'information</em>.</h1>
-    <p class="lede">Étudiant en <strong>Master Cybersécurité à l'EFREI Paris</strong>, avec un parcours partagé entre le développement d'applications et la sécurité des infrastructures. Des applications web livrées de bout en bout, des SOC déployés, des analyses de risques menées jusqu'au plan de traitement.</p>
-    <p class="rythme">Alternance 24 mois dès septembre 2026 · Rythme <b>1 semaine école / 2 semaines entreprise</b> · Île-de-France</p>
-
-    <div class="cta-row">
-      <a href="#projets" class="btn primary">Voir les projets</a>
-      <a href="https://github.com/Franck922" target="_blank" rel="noopener" class="btn">GitHub</a>
-      <a href="https://www.linkedin.com/in/franck-deffo" target="_blank" rel="noopener" class="btn">LinkedIn</a>
-      <a href="mailto:franckdeffo12@gmail.com" class="btn">Email</a>
+    <div class="dispo"><span class="pulse"></span>Alternance 24 mois · Disponible septembre 2026</div>
+    <h1><span>Franck</span><span class="l2">DEFFO</span></h1>
+    <div class="typed" id="typed"><span class="caret"></span></div>
+    <p class="lede">Je sécurise des infrastructures et je construis les applications qui tournent dessus. <b>Treize projets documentés</b> en détection, en réseaux, en développement et en gouvernance SSI, avec le code et les rapports à l'appui.</p>
+    <p class="rythme">Master Cybersécurité EFREI Paris · Rythme <b>1 semaine école / 2 semaines entreprise</b> · Île-de-France</p>
+    <div class="cta">
+      <a href="#projets" class="btn pri">Voir les projets<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+      <a href="https://github.com/Franck922" target="_blank" rel="noopener" class="btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.2 1.77 1.2 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.5 3.17-1.18 3.17-1.18.63 1.59.23 2.76.12 3.05.74.81 1.18 1.84 1.18 3.1 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a>
+      <a href="https://www.linkedin.com/in/franck-deffo" target="_blank" rel="noopener" class="btn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0zM.2 8.2h4.56V24H.2zM8.34 8.2h4.37v2.16h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 7v9h-4.56v-8c0-1.9-.03-4.36-2.66-4.36-2.66 0-3.07 2.08-3.07 4.22V24H8.34z"/></svg>LinkedIn</a>
+      <a href="mailto:franckdeffo12@gmail.com" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>Email</a>
     </div>
 
-    <div class="stats">
-      <div class="stat"><div class="n">13</div><div class="l">Projets techniques</div></div>
-      <div class="stat"><div class="n">14 800+</div><div class="l">Événements analysés</div></div>
-      <div class="stat"><div class="n">86</div><div class="l">Tests E2E automatisés</div></div>
-      <div class="stat"><div class="n">6</div><div class="l">Certifications</div></div>
+    <div class="stats rv">
+      <div class="st"><div class="n" data-to="13">0</div><div class="l">Projets documentés</div></div>
+      <div class="st"><div class="n" data-to="14800" data-suf="+">0</div><div class="l">Événements analysés</div></div>
+      <div class="st"><div class="n" data-to="86">0</div><div class="l">Tests E2E automatisés</div></div>
+      <div class="st"><div class="n" data-to="6">0</div><div class="l">Certifications</div></div>
     </div>
   </div>
+  <div class="scroll-cue">Défiler<i></i></div>
 </header>
 
+<div class="marq" aria-hidden="true">
+  <div class="marq-in">
+    <span>TypeScript<em hidden></em></span><span>Wazuh</span><span>Active Directory</span><span>React</span><span>pfSense</span><span>Spring Boot</span><span>MITRE ATT&amp;CK</span><span>Docker</span><span>OSPF</span><span>Laravel</span><span>Snort</span><span>ISO 27005</span><span>Next.js</span><span>IPsec</span><span>EBIOS RM</span><span>PostgreSQL</span><span>OpenVPN</span><span>OWASP Top 10</span>
+    <span>TypeScript</span><span>Wazuh</span><span>Active Directory</span><span>React</span><span>pfSense</span><span>Spring Boot</span><span>MITRE ATT&amp;CK</span><span>Docker</span><span>OSPF</span><span>Laravel</span><span>Snort</span><span>ISO 27005</span><span>Next.js</span><span>IPsec</span><span>EBIOS RM</span><span>PostgreSQL</span><span>OpenVPN</span><span>OWASP Top 10</span>
+  </div>
+</div>
+
+<!-- ================= COMPETENCES ================= -->
 <section id="stack">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="kicker">Compétences</div>
-      <h2>Stack technique</h2>
-      <p class="sec-sub">Les technologies que j'utilise réellement sur mes projets, et non une liste de veille.</p>
+    <div class="sechead rv">
+      <div class="kick">Compétences</div>
+      <h2>Ce que je sais faire</h2>
+      <p class="subh">Les outils que j'ai réellement mis en œuvre sur les projets ci-dessous, pas une liste de veille.</p>
     </div>
-    <div class="stack">
-
-      <div class="stack-card">
-        <h3><span class="ic c1">&lt;/&gt;</span> Développement &amp; données</h3>
-        <div class="tags">
-          <span class="tag hot">TypeScript</span><span class="tag hot">JavaScript</span>
-          <span class="tag hot">React 19</span><span class="tag hot">Next.js</span>
-          <span class="tag hot">Node.js</span><span class="tag hot">NestJS</span><span class="tag hot">Express</span>
-          <span class="tag">Vue.js 3</span>
-          <span class="tag">PHP</span><span class="tag">Laravel</span>
-          <span class="tag">Java</span><span class="tag">Spring Boot</span>
-          <span class="tag">Python</span><span class="tag">FastAPI</span>
-          <span class="tag">C#</span><span class="tag">Unity</span>
-          <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span>
-          <span class="tag">API REST</span><span class="tag">Swagger</span><span class="tag">Tailwind</span>
-          <span class="tag">Git</span><span class="tag">JUnit</span><span class="tag">PHPUnit</span>
-        </div>
-      </div>
-
-      <div class="stack-card">
-        <h3><span class="ic c2">🛡</span> Sécurité &amp; gouvernance</h3>
-        <div class="tags">
-          <span class="tag hot">SIEM Wazuh</span><span class="tag hot">EDR</span>
-          <span class="tag">Sysmon</span><span class="tag">Winlogbeat</span>
-          <span class="tag">Snort IDS/IPS</span><span class="tag">FIM</span>
-          <span class="tag hot">ISO 27005</span><span class="tag">ISO 27001</span>
-          <span class="tag hot">EBIOS RM</span><span class="tag">MITRE ATT&amp;CK</span><span class="tag">MITRE D3FEND</span>
-          <span class="tag hot">OWASP Top 10</span><span class="tag">RGPD</span><span class="tag">Référentiel HDS</span>
-          <span class="tag">PSSI</span><span class="tag">JWT / MFA</span>
-          <span class="tag">Bcrypt / Argon2</span><span class="tag">PKI X.509</span>
-        </div>
-      </div>
-
-      <div class="stack-card">
-        <h3><span class="ic c3">⚙</span> Infrastructures &amp; réseaux</h3>
-        <div class="tags">
-          <span class="tag hot">Windows Server</span><span class="tag hot">Active Directory</span>
-          <span class="tag">GPO</span><span class="tag">Linux</span>
-          <span class="tag hot">Docker</span><span class="tag">VMware</span>
-          <span class="tag">Cisco IOS</span><span class="tag">VLAN / 802.1Q</span>
-          <span class="tag">OSPF</span><span class="tag">NAT / PAT</span>
-          <span class="tag">VPN IPsec</span><span class="tag">OpenVPN</span>
-          <span class="tag">pfSense</span><span class="tag">Zabbix</span><span class="tag">Grafana</span>
-          <span class="tag">PowerShell</span><span class="tag">Wireshark</span>
-        </div>
-      </div>
-
-    </div>
+    <div class="stack" id="stackgrid"></div>
   </div>
 </section>
 
+<!-- ================= PROJETS ================= -->
 <section id="projets">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="kicker">Réalisations</div>
-      <h2>Projets</h2>
-      <p class="sec-sub">Treize projets menés en école et en autonomie. Chacun renvoie vers son dépôt de code ou sa documentation.</p>
+    <div class="sechead rv">
+      <div class="kick">Réalisations</div>
+      <h2>Treize projets, treize preuves</h2>
+      <p class="subh">Chaque projet renvoie vers son étude détaillée, son code ou son rapport technique. Les captures sont celles des environnements que j'ai montés.</p>
     </div>
-
-    <div class="filters" role="group" aria-label="Filtrer les projets">
-      <button class="filter" data-f="all" aria-pressed="true">Tous</button>
-      <button class="filter" data-f="dev" aria-pressed="false">Développement</button>
-      <button class="filter" data-f="sec" aria-pressed="false">Cybersécurité</button>
-      <button class="filter" data-f="infra" aria-pressed="false">Infrastructures</button>
-      <button class="filter" data-f="gov" aria-pressed="false">Gouvernance</button>
+    <div class="filters rv" role="group" aria-label="Filtrer les projets">
+      <button class="f" data-f="all" aria-pressed="true">Tous<b>13</b></button>
+      <button class="f" data-f="dev" aria-pressed="false">Développement<b>5</b></button>
+      <button class="f" data-f="sec" aria-pressed="false">Cybersécurité<b>5</b></button>
+      <button class="f" data-f="inf" aria-pressed="false">Infrastructures<b>4</b></button>
+      <button class="f" data-f="gov" aria-pressed="false">Gouvernance<b>4</b></button>
     </div>
-
-    <div class="grid" id="grid">
-
-      <!-- SECURELINK -->
-      <article class="proj feat" data-c="dev sec">
-        <div class="proj-top"><span class="cat dev">Dev · IA · Sécurité</span><span class="date">OCT 2025 à MARS 2026</span></div>
-        <h3>SecureLink : détection de phishing par IA</h3>
-        <p>Projet de fin d'études. Plateforme web d'analyse d'URL en temps réel, avec un moteur hybride à douze couches combinant un modèle RandomForest, la détection de typosquattage par distance de Levenshtein, l'analyse SSL/TLS, DNS et WHOIS, et le fingerprinting de kits de phishing. Protection anti-SSRF intégrée.</p>
-        <div class="kpi">100 % de précision sur un banc de 74 URL · verdict en moins de 3 secondes</div>
-        <div class="tags"><span class="tag">React 19</span><span class="tag">FastAPI</span><span class="tag">MongoDB</span><span class="tag">Python Asyncio</span><span class="tag">RandomForest</span><span class="tag">Playwright</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/pfe-securelink.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/docs/securelink-description-fonctionnelle.pdf" target="_blank" rel="noopener">Description fonctionnelle (PDF) →</a></div>
-      </article>
-
-      <!-- EDR -->
-      <article class="proj feat" data-c="sec dev">
-        <div class="proj-top"><span class="cat sec">Sécurité · Dev</span><span class="date">JUIL à AOÛT 2026</span></div>
-        <h3>Infrastructure EDR &amp; console SOC</h3>
-        <p>Chaîne complète de détection et réponse : capteur Windows, moteur de détection hybride combinant règles heuristiques et machine learning, riposte automatique et console SOC multi-analystes conteneurisée.</p>
-        <div class="kpi">F1-score de 1.00 sur 14 800+ événements · blocage en quelques secondes · 86 tests E2E</div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">Docker</span><span class="tag">Sysmon</span><span class="tag">PowerShell</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/edr-console-soc.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://github.com/Franck922/ransomware-detector" target="_blank" rel="noopener">Code source →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/docs/rapport-stage-ransomware-detector.pdf" target="_blank" rel="noopener">Rapport (PDF) →</a></div>
-      </article>
-
-      <!-- TELECARE HDS -->
-      <article class="proj feat" data-c="gov sec">
-        <div class="proj-top"><span class="cat gov">Gouvernance · Santé</span><span class="date">2026</span></div>
-        <h3>TeleCare : gouvernance SSI et conformité HDS</h3>
-        <p>Mission de RSSI simulée pour une startup de télémédecine traitant les données de 20 000 patients. Construction du socle documentaire en vue de la certification HDS : PSSI, politique de protection des données de santé, sécurité des API, habilitations et procédure de gestion des incidents.</p>
-        <div class="kpi">300 médecins et 50 établissements couverts · référentiels HDS, ISO 27001 et RGPD</div>
-        <div class="tags"><span class="tag">HDS</span><span class="tag">ISO 27001</span><span class="tag">RGPD</span><span class="tag">PSSI</span><span class="tag">MFA</span><span class="tag">Sécurité des API</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/telecare-hds.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/docs/pssi-telecare-hds.pdf" target="_blank" rel="noopener">PSSI (PDF) →</a></div>
-      </article>
-
-      <!-- SOC BANCAIRE -->
-      <article class="proj" data-c="sec infra">
-        <div class="proj-top"><span class="cat sec">Sécurité opérationnelle</span><span class="date">FÉV à MARS 2026</span></div>
-        <h3>SOC et supervision d'un SI bancaire</h3>
-        <p>Déploiement d'un centre de supervision sur cinq machines virtuelles : SIEM Wazuh avec surveillance de l'intégrité des fichiers, supervision proactive via Zabbix et Grafana, détection des attaques par force brute SSH et analyse des requêtes HTTP malveillantes.</p>
-        <div class="kpi">Tableaux de bord traduisant les journaux techniques en indicateurs de risque</div>
-        <div class="tags"><span class="tag">Wazuh</span><span class="tag">Zabbix</span><span class="tag">Grafana</span><span class="tag">FIM</span><span class="tag">Linux</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/soc-bancaire.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/docs/rapport-technique-soc-bancaire.pdf" target="_blank" rel="noopener">Rapport technique (PDF) →</a></div>
-      </article>
-
-      <!-- GESTION VOYAGES LARAVEL VUE -->
-      <article class="proj" data-c="dev">
-        <div class="proj-top"><span class="cat dev">Développement web</span><span class="date">FÉV à MARS 2025</span></div>
-        <h3>Gestion de voyages : Laravel &amp; Vue.js</h3>
-        <p>Application complète à quatre modules administratifs (utilisateurs, vols, paiements, réservations). Conception du schéma de données, API REST, authentification sécurisée avec réinitialisation et vérification par e-mail, contrôle d'accès fin par Policies et Gates, journalisation centralisée et vues d'audit.</p>
-        <div class="tags"><span class="tag">Laravel</span><span class="tag">Vue 3</span><span class="tag">Tailwind</span><span class="tag">MySQL</span><span class="tag">Axios</span><span class="tag">Postman</span><span class="tag">PHPUnit</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/gestion-voyages-laravel.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://github.com/Franck922/projet_backend" target="_blank" rel="noopener">Backend →</a><a href="https://github.com/Franck922/projet_frontend" target="_blank" rel="noopener">Frontend →</a></div>
-      </article>
-
-      <!-- API JAVA SPRING -->
-      <article class="proj" data-c="dev">
-        <div class="proj-top"><span class="cat dev">Développement backend</span><span class="date">2025</span></div>
-        <h3>API REST de gestion de voyages en Java</h3>
-        <p>Architecture en couches (contrôleurs, services, repositories) avec gestion des transactions et traitement centralisé des erreurs. Documentation Swagger, tests JUnit, collections Postman réutilisables et optimisation des requêtes Hibernate.</p>
-        <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Spring Data JPA</span><span class="tag">Hibernate</span><span class="tag">MySQL</span><span class="tag">Swagger</span><span class="tag">JUnit</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/api-java-spring.html" target="_blank" rel="noopener">Étude détaillée →</a></div>
-      </article>
-
-      <!-- POC CYBER LIMITED -->
-      <article class="proj" data-c="infra sec">
-        <div class="proj-top"><span class="cat infra">Infrastructure · Durcissement</span><span class="date">2025</span></div>
-        <h3>POC Cyber Limited : infrastructure durcie</h3>
-        <p>Création et durcissement d'une infrastructure d'entreprise de bout en bout : pare-feu pfSense en frontal, IDS Snort avec réglage des règles pour limiter les faux positifs, Fail2ban, stratégies de groupe et durcissement multi-systèmes.</p>
-        <div class="tags"><span class="tag">pfSense</span><span class="tag">Snort</span><span class="tag">Fail2ban</span><span class="tag">GPO</span><span class="tag">VMware</span><span class="tag">Wireshark</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/poc-cyberlimited.html" target="_blank" rel="noopener">Étude détaillée →</a></div>
-      </article>
-
-      <!-- TECHSECURE AD VPN -->
-      <article class="proj" data-c="infra sec">
-        <div class="proj-top"><span class="cat infra">Infrastructure · PKI</span><span class="date">NOV à DÉC 2025</span></div>
-        <h3>TechSecure : Active Directory &amp; VPN à certificats</h3>
-        <p>Annuaire Active Directory sous Windows Server 2019 (AD DS, DNS, unités d'organisation par service) couplé à un serveur OpenVPN sous Linux. Mise en place d'une autorité de certification interne et génération des certificats X.509 serveur et clients.</p>
-        <div class="tags"><span class="tag">Windows Server 2019</span><span class="tag">AD DS</span><span class="tag">GPO</span><span class="tag">OpenVPN</span><span class="tag">Easy-RSA</span><span class="tag">PKI</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/ad-vpn.html" target="_blank" rel="noopener">Étude détaillée →</a></div>
-      </article>
-
-      <!-- RESEAU MULTISITES -->
-      <article class="proj" data-c="infra">
-        <div class="proj-top"><span class="cat infra">Réseaux</span><span class="date">NOV 2025 à JANV 2026</span></div>
-        <h3>Réseau multi-sites et tunnel IPsec</h3>
-        <p>Architecture interconnectant plusieurs sites distants : segmentation VLAN avec trunking 802.1Q et propagation VTP, routage dynamique OSPF, NAT statique et PAT, tunnel IPsec site à site (AES et SHA-HMAC) et durcissement des équipements via SSHv2.</p>
-        <div class="tags"><span class="tag">Cisco IOS</span><span class="tag">VLAN</span><span class="tag">OSPF</span><span class="tag">IPsec</span><span class="tag">NAT/PAT</span><span class="tag">SSHv2</span><span class="tag">Wireshark</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/reseaux-multisites.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/docs/rapport-ospf-tp6.pdf" target="_blank" rel="noopener">Rapport OSPF (PDF) →</a></div>
-      </article>
-
-      <!-- ISO 27005 -->
-      <article class="proj" data-c="gov">
-        <div class="proj-top"><span class="cat gov">Gouvernance · Risques</span><span class="date">2025 à 2026</span></div>
-        <h3>Analyse de risques ISO 27005</h3>
-        <p>Analyse complète sur le système d'information d'une chaîne nationale de distribution : identification des actifs primordiaux et des biens supports, évaluation de la vraisemblance et de l'impact financier, juridique et d'image, puis élaboration d'un plan de traitement des risques hiérarchisé.</p>
-        <div class="tags"><span class="tag">ISO 27005</span><span class="tag">EBIOS RM</span><span class="tag">ISO 27001</span><span class="tag">GRC</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/grc-iso27005.html" target="_blank" rel="noopener">Étude détaillée →</a></div>
-      </article>
-
-      <!-- MITRE -->
-      <article class="proj" data-c="sec gov">
-        <div class="proj-top"><span class="cat sec">Analyse de menaces</span><span class="date">2025 à 2026</span></div>
-        <h3>Modélisation de menaces MITRE ATT&amp;CK et D3FEND</h3>
-        <p>Décomposition de deux scénarios d'attaque, sur un système de réservation hôtelier et sur un réseau industriel SCADA. Corrélation des techniques observées avec le référentiel ATT&amp;CK, puis définition de contre-mesures via D3FEND : durcissement des identifiants, isolation des sauvegardes et segmentation réseau.</p>
-        <div class="tags"><span class="tag">MITRE ATT&amp;CK</span><span class="tag">MITRE D3FEND</span><span class="tag">SCADA</span><span class="tag">Kill Chain</span><span class="tag">Nmap</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/mitre-analyse.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Rapport-MITRE-Franck-DEFFO.pdf" target="_blank" rel="noopener">Rapport (PDF) →</a></div>
-      </article>
-
-      <!-- AGILE OWASP -->
-      <article class="proj" data-c="dev gov">
-        <div class="proj-top"><span class="cat gov">Pilotage · Sécurité applicative</span><span class="date">NOV à DÉC 2025</span></div>
-        <h3>Pilotage agile et sécurisation applicative</h3>
-        <p>Étude de cas sur une plateforme de streaming : structuration en sprints avec backlog Jira et diagrammes de Gantt, stratégie d'authentification (double facteur, jetons JWT, gestion granulaire des rôles), audit des vulnérabilités du Top 10 OWASP et définition des standards de chiffrement.</p>
-        <div class="tags"><span class="tag">Scrum</span><span class="tag">Jira</span><span class="tag">OWASP Top 10</span><span class="tag">JWT</span><span class="tag">Bcrypt / Argon2</span><span class="tag">TLS</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/pilotage-agile.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/docs/agile-presentation-finale.pdf" target="_blank" rel="noopener">Présentation (PDF) →</a></div>
-      </article>
-
-      <!-- UNITY -->
-      <article class="proj" data-c="dev">
-        <div class="proj-top"><span class="cat dev">Développement · Temps réel</span><span class="date">2024 à 2025</span></div>
-        <h3>Jeu 2D sous Unity</h3>
-        <p>Jeu complet en C# : mécaniques de déplacement avec double saut et gestion de l'inertie, système de score et de chronomètre, machines d'états d'animation, et intelligence ennemie en patrouille, détection puis poursuite. Optimisation par pooling d'objets.</p>
-        <div class="tags"><span class="tag">Unity 2D</span><span class="tag">C#</span><span class="tag">Animator</span><span class="tag">Rigidbody2D</span><span class="tag">Tilemap</span></div>
-        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/projets/jeu-unity-2d.html" target="_blank" rel="noopener">Étude détaillée →</a></div>
-      </article>
-
-    </div>
+    <div class="grid" id="grid"></div>
   </div>
 </section>
 
+<!-- ================= PARCOURS ================= -->
 <section id="parcours">
   <div class="wrap">
-    <div class="sec-head">
-      <div class="kicker">Expérience</div>
-      <h2>Parcours professionnel</h2>
-    </div>
-    <div class="tl">
-      <div class="tl-item">
-        <h3>Stagiaire technicien support IT, systèmes et réseaux</h3>
-        <div class="tl-meta">Juillet à septembre 2025 · Bureau Veritas · Douala, Cameroun</div>
-        <p>Prise en charge des incidents utilisateurs de niveau 1 et 2, du diagnostic à la résolution, avec escalade documentée vers les équipes concernées. Installation et maintenance du parc informatique. Participation à la rédaction des procédures de gestion des incidents.</p>
-      </div>
-      <div class="tl-item">
-        <h3>Bénévole accueil et évènementiel</h3>
-        <div class="tl-meta">Depuis 2023 · Linkee · Paris</div>
-        <p>Accueil et orientation du public lors des distributions solidaires, organisation de la file et bon déroulement des opérations en forte affluence.</p>
-      </div>
-      <div class="tl-item">
-        <h3>Équipier polyvalent en restauration</h3>
-        <div class="tl-meta">Depuis août 2026 · Topivo · Île-de-France</div>
-        <p>Service client et préparation des commandes en environnement à fort passage, en coordination avec l'équipe.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="formation">
-  <div class="wrap">
-    <div class="two-col">
+    <div class="two">
       <div>
-        <div class="sec-head">
-          <div class="kicker">Études</div>
+        <div class="sechead rv">
+          <div class="kick">Expérience</div>
+          <h2>Parcours</h2>
+        </div>
+        <div class="tl rv">
+          <div class="ti">
+            <h3>Stagiaire technicien support IT, systèmes et réseaux</h3>
+            <div class="tmeta">Juillet à septembre 2025 · Bureau Veritas · Douala</div>
+            <p>Prise en charge des incidents utilisateurs de niveau 1 et 2, du diagnostic à la résolution, avec escalade documentée vers les équipes concernées. Installation et maintenance du parc informatique, puis participation à la rédaction des procédures de gestion des incidents.</p>
+          </div>
+          <div class="ti">
+            <h3>Équipier polyvalent en restauration</h3>
+            <div class="tmeta">Depuis août 2026 · Topivo · Île-de-France</div>
+            <p>Service client et préparation des commandes en environnement à fort passage, en coordination avec l'équipe.</p>
+          </div>
+          <div class="ti">
+            <h3>Bénévole accueil et évènementiel</h3>
+            <div class="tmeta">Depuis octobre 2023 · Linkee · Paris</div>
+            <p>Accueil et orientation du public lors des distributions solidaires, organisation de la file et bon déroulement des opérations en forte affluence.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="sechead rv">
+          <div class="kick">Études</div>
           <h2>Formation</h2>
         </div>
-        <div class="tl">
-          <div class="tl-item">
-            <h3>Master Cybersécurité (M1 &amp; M2)</h3>
-            <div class="tl-meta">2026 à 2028 · EFREI Paris</div>
-            <p>En alternance. Titre RNCP 39781 Expert Réseaux, Infrastructures et Sécurité.</p>
+        <div class="tl rv" style="margin-bottom:44px">
+          <div class="ti">
+            <h3>Master Cybersécurité, M1 et M2</h3>
+            <div class="tmeta">Septembre 2026 à juillet 2028 · EFREI Paris</div>
+            <p>En alternance. Titre RNCP 39781, Expert Réseaux, Infrastructures et Sécurité.</p>
           </div>
-          <div class="tl-item">
-            <h3>Bachelor 3 Cybersécurité &amp; Réseaux</h3>
-            <div class="tl-meta">2025 à 2026 · ECE Paris</div>
+          <div class="ti">
+            <h3>Bachelor 3 Cybersécurité et Réseaux</h3>
+            <div class="tmeta">Octobre 2025 à juillet 2026 · ECE Paris</div>
           </div>
-          <div class="tl-item">
-            <h3>Bachelor 1 &amp; 2 Informatique</h3>
-            <div class="tl-meta">2023 à 2025 · Keyce Informatique &amp; IA · Douala</div>
+          <div class="ti">
+            <h3>Bachelor 1 et 2 Informatique</h3>
+            <div class="tmeta">Octobre 2023 à juillet 2025 · Keyce Informatique &amp; IA · Douala</div>
           </div>
+        </div>
+        <div class="sechead rv" style="margin-bottom:22px">
+          <div class="kick">Validations</div>
+          <h2 style="font-size:clamp(22px,3vw,28px)">Certifications</h2>
+        </div>
+        <div class="certs rv" id="certs"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VEILLE ================= -->
+<section id="veille">
+  <div class="wrap">
+    <div class="sechead rv">
+      <div class="kick">Veille</div>
+      <h2>Rester à jour</h2>
+      <p class="subh">La menace bouge plus vite que les programmes scolaires. Voilà où je vais chercher l'information et comment je m'entraîne.</p>
+    </div>
+    <div class="veille">
+      <div class="vc rv">
+        <h3><span class="dot" style="background:var(--sec)"></span>Sources suivies</h3>
+        <p>Alertes, bulletins et analyses que je consulte régulièrement.</p>
+        <div class="vl">
+          <a href="https://www.cert.ssi.gouv.fr/" target="_blank" rel="noopener">CERT-FR, ANSSI<span class="s">Avis &amp; alertes</span></a>
+          <a href="https://www.cybermalveillance.gouv.fr/" target="_blank" rel="noopener">Cybermalveillance.gouv.fr<span class="s">Menaces grand public</span></a>
+          <a href="https://www.ncsc.gov.uk/" target="_blank" rel="noopener">NCSC UK<span class="s">Guidance</span></a>
+          <a href="https://www.bleepingcomputer.com/" target="_blank" rel="noopener">BleepingComputer<span class="s">Actualité</span></a>
+          <a href="https://attack.mitre.org/" target="_blank" rel="noopener">MITRE ATT&amp;CK<span class="s">Référentiel</span></a>
         </div>
       </div>
-      <div>
-        <div class="sec-head">
-          <div class="kicker">Validations</div>
-          <h2>Certifications</h2>
+      <div class="vc rv">
+        <h3><span class="dot" style="background:var(--inf)"></span>Entraînement</h3>
+        <p>Labos pratiques et environnements montés chez moi.</p>
+        <div class="vl">
+          <a href="https://tryhackme.com/" target="_blank" rel="noopener">TryHackMe<span class="s">Labos offensifs</span></a>
+          <div>Laboratoire VMware personnel<span class="s">AD, pfSense, Wazuh</span></div>
+          <div>Analyse de rançongiciel en VM isolée<span class="s">Snapshots</span></div>
+          <div>Cisco Packet Tracer et GNS3<span class="s">Réseaux</span></div>
         </div>
-        <div class="certs">
-          <div class="cert"><div><div class="cn">Junior Cybersecurity Analyst</div><div class="co">Cisco Networking Academy</div></div></div>
-          <div class="cert"><div><div class="cn">Cyber Threat Management</div><div class="co">Cisco Networking Academy</div></div></div>
-          <div class="cert"><div><div class="cn">Network Defense</div><div class="co">Cisco Networking Academy</div></div></div>
-          <div class="cert"><div><div class="cn">SecNumacadémie</div><div class="co">ANSSI · 2025</div></div></div>
-          <div class="cert"><div><div class="cn">Tech Away Cyber, niveaux 2 et 3</div><div class="co">DataScientest</div></div></div>
-          <div class="cert"><div><div class="cn">Foundations of Cybersecurity · Manage Security Risks</div><div class="co">Google / Coursera · 2025</div></div></div>
+      </div>
+      <div class="vc rv">
+        <h3><span class="dot" style="background:var(--gov)"></span>Référentiels de travail</h3>
+        <p>Les cadres sur lesquels je m'appuie pour structurer une analyse.</p>
+        <div class="vl">
+          <div>ISO 27001 et ISO 27005<span class="s">SMSI, risques</span></div>
+          <div>EBIOS Risk Manager<span class="s">ANSSI</span></div>
+          <div>MITRE ATT&amp;CK et D3FEND<span class="s">Menaces, défense</span></div>
+          <div>OWASP Top 10<span class="s">Sécurité applicative</span></div>
+          <div>Référentiel HDS et RGPD<span class="s">Données de santé</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ================= CONTACT ================= -->
 <section id="contact">
   <div class="wrap">
-    <div class="contact-box">
+    <div class="cbox rv">
       <h2>Parlons de votre besoin</h2>
-      <p>Je recherche une alternance de 24 mois à partir de septembre 2026, en sécurité opérationnelle, en infrastructures ou en développement sécurisé. Disponible dès maintenant, au rythme d'une semaine de cours pour deux semaines en entreprise.</p>
-      <div class="contact-links">
-        <a href="mailto:franckdeffo12@gmail.com" class="btn primary">franckdeffo12@gmail.com</a>
+      <p>Je recherche une alternance de 24 mois à partir de septembre 2026, en sécurité opérationnelle, en infrastructures ou en développement sécurisé. Le rythme est d'une semaine de cours pour deux semaines en entreprise, et je suis disponible dès maintenant pour un stage alterné.</p>
+      <div class="clinks">
+        <a href="mailto:franckdeffo12@gmail.com" class="btn pri">franckdeffo12@gmail.com</a>
         <a href="tel:+33745999754" class="btn">07 45 99 97 54</a>
         <a href="https://www.linkedin.com/in/franck-deffo" target="_blank" rel="noopener" class="btn">LinkedIn</a>
         <a href="https://github.com/Franck922" target="_blank" rel="noopener" class="btn">GitHub</a>
@@ -454,25 +449,430 @@ footer{border-top:1px solid var(--border-light);padding:32px 0;text-align:center
 </section>
 
 <footer>
-  <div class="wrap">Franck DEFFO · Paris · Master Cybersécurité EFREI Paris</div>
+  <div class="wrap">
+    <span>Franck DEFFO · Paris · Master Cybersécurité EFREI Paris</span>
+    <span>Site statique, GitHub Pages</span>
+  </div>
 </footer>
 
+<div id="lb" role="dialog" aria-modal="true" aria-label="Aperçu">
+  <span class="idx" id="lbi"></span>
+  <button class="x" id="lbx" aria-label="Fermer">&times;</button>
+  <button class="ar pv" id="lbp" aria-label="Précédent">&#8249;</button>
+  <img id="lbimg" alt="">
+  <button class="ar nx" id="lbn" aria-label="Suivant">&#8250;</button>
+  <div class="cap" id="lbc"></div>
+</div>
+
+<script src="assets/icons.js"></script>
 <script>
 (function(){
-  var btns = document.querySelectorAll('.filter');
-  var cards = document.querySelectorAll('.proj');
-  btns.forEach(function(b){
-    b.addEventListener('click', function(){
-      var f = b.dataset.f;
-      btns.forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); });
-      cards.forEach(function(c){
-        var show = (f === 'all') || c.dataset.c.split(' ').indexOf(f) !== -1;
-        c.classList.toggle('hidden', !show);
+'use strict';
+var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* ============ DONNEES ============ */
+var STACK = [
+ {t:'Développement web et applicatif', c:'var(--dev)', d:"Du front à l'API, avec les tests et la documentation qui vont avec.",
+  items:[['TypeScript','typescript'],['JavaScript','javascript'],['React','react'],['Next.js','nextdotjs'],
+         ['Node.js','nodedotjs'],['NestJS','nestjs'],['Express','express'],['Vue.js','vuedotjs'],
+         ['PHP','php'],['Laravel','laravel'],['Java','java'],['Spring Boot','springboot'],
+         ['Python','python'],['FastAPI','fastapi'],['C#','csharp'],['Unity','unity'],
+         ['Tailwind','tailwindcss'],['Git','git'],['PostgreSQL','postgresql'],['MySQL','mysql'],
+         ['MongoDB','mongodb'],['Swagger','swagger'],['JUnit','junit5'],['Postman','postman']]},
+
+ {t:'Sécurité opérationnelle et détection', c:'var(--sec)', d:"Collecter, corréler, alerter, puis réduire le bruit pour que l'alerte reste lisible.",
+  items:[['Wazuh','wazuh'],['Snort','snort'],['EDR','edr'],['Sysmon','sysmon'],
+         ['Winlogbeat','elastic'],['SIEM','siem'],['Fail2ban','fail2ban'],['Nmap','nmap'],
+         ['Wireshark','wireshark'],['Grafana','grafana'],['Zabbix','zabbix'],
+         ['MITRE ATT&CK','mitre'],['D3FEND','d3fend'],['OWASP','owasp']]},
+
+ {t:'Infrastructures, systèmes et réseaux', c:'var(--inf)', d:"Monter l'environnement, le segmenter, puis le durcir avant de le livrer.",
+  items:[['Windows Server','winserver'],['Active Directory','ad'],['GPO','gpo'],['Linux','linux'],
+         ['Docker','docker'],['VMware','vmware'],['pfSense','pfsense'],['Cisco IOS','cisco'],
+         ['VLAN 802.1Q','vlan'],['OSPF','ospf'],['NAT / PAT','nat'],['IPsec','ipsec'],
+         ['OpenVPN','openvpn'],['PKI X.509','pki'],['PowerShell','powershell'],['Bash','gnubash']]},
+
+ {t:'Gouvernance, risques et méthodes', c:'var(--gov)', d:"Traduire un risque technique en décision compréhensible par une direction.",
+  items:[['ISO 27001','iso1'],['ISO 27005','iso5'],['EBIOS RM','ebios'],['Référentiel HDS','hds'],
+         ['RGPD','rgpd'],['PSSI','pssi'],['Analyse de risques','risk'],['Scrum','scrum'],
+         ['Jira','jira'],['Gantt','gantt'],['JWT / MFA','jsonwebtokens'],['Argon2','argon']]}
+];
+
+var CERTS = [
+ ['Junior Cybersecurity Analyst','Cisco Networking Academy'],
+ ['Cyber Threat Management','Cisco Networking Academy'],
+ ['Network Defense','Cisco Networking Academy'],
+ ['SecNumacadémie','ANSSI · 2025'],
+ ['Tech Away Cyber, niveaux 2 et 3','DataScientest'],
+ ['Foundations of Cybersecurity · Manage Security Risks','Google, Coursera · 2025']
+];
+
+var B = 'projets/';
+var IM = 'assets/img/';
+var PROJ = [
+{k:'dev sec', cat:'dev', catl:'Dev · IA · Sécurité', dt:'OCT 2025 à MARS 2026', wide:1,
+ t:'SecureLink, analyse de sécurité des sites web et détection de phishing',
+ p:"Projet de fin d'études mené à l'ECE Paris. La plateforme prend une URL, la décompose en une vingtaine d'indicateurs mesurables, puis rend un verdict en quelques secondes. Le score combine un modèle Random Forest pour moitié, des règles métier déterministes pour trois dixièmes, et des vérifications réseau en direct pour le reste : validité du certificat, âge du domaine, cohérence du reverse DNS. Autour de l'outil, un parcours pédagogique en huit niveaux, douze scénarios de phishing simulés et un espace d'administration.",
+ tags:['TypeScript','React','Node.js','Python','Random Forest','API REST','TLS','WHOIS'],
+ imgs:[['securelink-dashboard','Tableau de bord : répartition des niveaux de risque et alertes récentes'],
+       ['securelink-rapport','Rapport de sécurité complet avec note globale et recommandations priorisées'],
+       ['securelink-detail-site','Détail d\'un site analysé : certificat, en-têtes HTTP, cookies, formulaires'],
+       ['securelink-inventaire','Inventaire des sites surveillés et de leur niveau de sécurité'],
+       ['securelink-analyse','Analyse en cours, étape par étape'],
+       ['securelink-verification','Vérification de propriété du domaine avant analyse approfondie'],
+       ['securelink-ajout-site','Ajout d\'un site à surveiller'],
+       ['securelink-connexion','Écran de connexion']],
+ links:[['Étude détaillée',B+'pfe-securelink.html'],['Description fonctionnelle (PDF)','docs/securelink-description-fonctionnelle.pdf']]},
+
+{k:'sec dev', cat:'sec', catl:'Détection · EDR', dt:'JUIL à AOÛT 2026', wide:1,
+ t:'Détecteur de rançongiciel et console SOC multi-analystes',
+ p:"Moteur hybride qui surveille le comportement des processus sous Windows plutôt que leurs signatures. Collecte par Sysmon et Winlogbeat, moteur heuristique sur les seuils d'entropie et de création massive de fichiers, puis modèle d'apprentissage supervisé entraîné sur le jeu de données collecté. Réponse automatique à la détection et console partagée par plusieurs analystes. La migration vers PostgreSQL en fin de projet a réglé les problèmes de concurrence de la première version.",
+ tags:['Python','Sysmon','Winlogbeat','Random Forest','LSTM','PostgreSQL','Docker','MITRE ATT&CK'],
+ imgs:[],
+ links:[['Étude détaillée',B+'edr-console-soc.html'],['Code source','https://github.com/Franck922/ransomware-detector'],['Rapport complet (PDF)','docs/rapport-stage-ransomware-detector.pdf']]},
+
+{k:'inf sec', cat:'inf', catl:'Infrastructure · Durcissement', dt:'2025',
+ t:'POC Cyber Limited, infrastructure durcie de bout en bout',
+ p:"Construction d'une infrastructure d'entreprise complète, puis durcissement de chaque couche. Pare-feu pfSense en frontal avec segmentation DMZ et réseau interne, IDS Snort dont les règles ont été ajustées pour faire tomber les faux positifs, Fail2ban sur les services exposés, stratégies de groupe côté Windows.",
+ tags:['pfSense','Snort','Fail2ban','GPO','VMware','Wireshark'],
+ imgs:[['pfsense-dashboard','Tableau de bord pfSense en production'],
+       ['snort-alert','Alertes Snort après ajustement des règles'],
+       ['firewall-rules','Règles de filtrage entre DMZ et réseau interne'],
+       ['fail2ban-config','Configuration Fail2ban sur les services exposés'],
+       ['cyberlimited-topology','Topologie de l\'infrastructure']],
+ links:[['Étude détaillée',B+'poc-cyberlimited.html']]},
+
+{k:'inf sec', cat:'inf', catl:'Active Directory · PKI', dt:'NOV à DÉC 2025',
+ t:'TechSecure, annuaire Active Directory et VPN à certificats',
+ p:"Contrôleur de domaine sous Windows Server 2019 avec DNS, unités d'organisation par service et stratégies de groupe. L'accès distant passe par OpenVPN, mais sans mot de passe : une autorité de certification interne délivre un certificat X.509 par poste, et le tunnel ne s'ouvre que si le client détient la clé privée correspondante.",
+ tags:['Windows Server 2019','AD DS','GPO','OpenVPN','Easy-RSA','PKI'],
+ imgs:[['login-screen','Ouverture de session sur le domaine TECHSECURE'],
+       ['ad-users','Unités d\'organisation et comptes par service'],
+       ['ad-install','Promotion du contrôleur de domaine'],
+       ['domain-join','Jonction d\'un poste client au domaine'],
+       ['openvpn-status','Tunnel OpenVPN établi par certificat']],
+ links:[['Étude détaillée',B+'ad-vpn.html']]},
+
+{k:'sec gov', cat:'sec', catl:'Analyse de menaces', dt:'JANV 2026',
+ t:'Modélisation de menaces MITRE ATT&CK et D3FEND',
+ p:"Décomposition de deux scénarios d'attaque, l'un sur un système de réservation hôtelier, l'autre sur un réseau industriel SCADA. Chaque étape observée a été rattachée à une technique du référentiel ATT&CK, puis à une contre-mesure D3FEND : durcissement des identifiants, isolation des sauvegardes, segmentation réseau.",
+ tags:['MITRE ATT&CK','MITRE D3FEND','SCADA','Kill Chain','Nmap'],
+ imgs:[['mitre-correlation-table','Récapitulatif de l\'attaque : technique ATT&CK, vulnérabilité exploitée et contre-mesure D3FEND'],
+       ['mitre-conclusion','Matrice d\'atténuation'],
+       ['scada-attack-chain','Chaîne d\'attaque reconstituée sur le réseau SCADA']],
+ links:[['Étude détaillée',B+'mitre-analyse.html'],['Rapport (PDF)','Rapport-MITRE-Franck-DEFFO.pdf']]},
+
+{k:'inf', cat:'inf', catl:'Réseaux', dt:'NOV 2025 à JANV 2026',
+ t:'Réseau multi-sites et tunnel IPsec',
+ p:"Architecture interconnectant plusieurs sites distants. Segmentation VLAN avec trunking 802.1Q et propagation VTP, Spanning Tree réglé pour placer la racine sur le commutateur de distribution, routage OSPF multi-aires, traduction d'adresses, puis tunnel IPsec site à site en AES et SHA-HMAC. Administration durcie par SSHv2.",
+ tags:['Cisco IOS','VLAN','OSPF','IPsec','NAT / PAT','SSHv2','IPv6'],
+ imgs:[['topologie-ipv6','Topologie interconnectant trois réseaux locaux'],
+       ['ping-ipv6','Validation de la connectivité de bout en bout en IPv6']],
+ links:[['Étude détaillée',B+'reseaux-multisites.html'],['Rapport OSPF (PDF)','docs/rapport-ospf-tp6.pdf']]},
+
+{k:'gov sec', cat:'gov', catl:'Gouvernance · Santé', dt:'2025 à 2026',
+ t:'TeleCare, gouvernance SSI et conformité HDS',
+ p:"Plateforme de télémédecine soumise à la certification Hébergeur de Données de Santé. Rédaction de la politique de sécurité, de la matrice d'habilitations par profil métier et du processus de gestion des incidents, jusqu'à l'obligation de notification à la CNIL sous 72 heures. Chaque exigence a été écrite avec le rôle qui la porte et la preuve attendue en audit.",
+ tags:['HDS','ISO 27001','RGPD','PSSI','IAM','Gestion des incidents'],
+ imgs:[],
+ links:[['Étude détaillée',B+'telecare-hds.html'],['PSSI (PDF)','docs/pssi-telecare-hds.pdf'],['Habilitations (PDF)','docs/politique-habilitations-telecare.pdf']]},
+
+{k:'sec inf', cat:'sec', catl:'Supervision · SOC', dt:'FÉV 2026',
+ t:'SOC et supervision d\'un système bancaire',
+ p:"Cinq machines virtuelles simulant un système d'information bancaire, supervisées par Wazuh pour la détection d'intrusions, Zabbix pour l'état des serveurs et Grafana pour la visualisation. Les attaques par force brute SSH et les modifications de fichiers critiques remontent en moins de cinq secondes sur la console.",
+ tags:['Wazuh','Zabbix','Grafana','FIM','Linux','Détection d\'intrusion'],
+ imgs:[],
+ links:[['Étude détaillée',B+'soc-bancaire.html'],['Rapport technique (PDF)','docs/rapport-technique-soc-bancaire.pdf'],['POC (PDF)','docs/poc-soc-bancaire.pdf']]},
+
+{k:'gov', cat:'gov', catl:'Risques', dt:'2025 à 2026',
+ t:'Analyse de risques ISO 27005',
+ p:"Analyse menée sur le système d'information d'une chaîne nationale de distribution. Identification des actifs primordiaux et des biens supports, évaluation de la vraisemblance et de l'impact financier, juridique et d'image, puis plan de traitement hiérarchisé et budgété, présentable à un comité de direction.",
+ tags:['ISO 27005','EBIOS RM','ISO 27001','GRC'],
+ imgs:[],
+ links:[['Étude détaillée',B+'grc-iso27005.html']]},
+
+{k:'dev', cat:'dev', catl:'Développement web', dt:'2024 à 2025',
+ t:'Plateforme de gestion de voyages en Laravel et Vue.js',
+ p:"Application découpée en deux, une interface cliente qui consomme une API et un back-office d'administration. Authentification et rôles contrôlés côté serveur par intergiciels, schéma relationnel versionné par migrations, protection contre la falsification de requête et requêtes préparées via l'ORM.",
+ tags:['PHP','Laravel','Vue.js','MySQL','Eloquent','API REST','Tailwind'],
+ imgs:[],
+ links:[['Étude détaillée',B+'gestion-voyages-laravel.html'],['Backend','https://github.com/Franck922/projet_backend'],['Frontend','https://github.com/Franck922/projet_frontend']]},
+
+{k:'dev', cat:'dev', catl:'Développement back-end', dt:'2025',
+ t:'API REST de gestion de voyages en Java Spring Boot',
+ p:"Même domaine métier que la plateforme Laravel, repris sur la pile Java pour travailler ce que Laravel masque : délimitation explicite des transactions, contrôle des requêtes générées par Hibernate et correction des chargements en cascade qui multipliaient les allers-retours vers la base.",
+ tags:['Java','Spring Boot','Spring Data JPA','Hibernate','MySQL','Swagger','JUnit','Postman'],
+ imgs:[],
+ links:[['Étude détaillée',B+'api-java-spring.html']]},
+
+{k:'gov dev', cat:'gov', catl:'Pilotage · Sécurité applicative', dt:'NOV à DÉC 2025',
+ t:'Pilotage agile et sécurisation applicative',
+ p:"Étude de cas sur une plateforme de streaming, traitée sous deux angles. Côté pilotage, backlog estimé, sprints suivis sur Jira et diagramme de Gantt qui a fait apparaître le chemin critique. Côté sécurité, double facteur, jetons JWT courts, rôles vérifiés côté serveur et revue des dix risques OWASP appliqués au périmètre.",
+ tags:['Scrum','Jira','Gantt','OWASP Top 10','JWT','Argon2','TLS'],
+ imgs:[],
+ links:[['Étude détaillée',B+'pilotage-agile.html'],['Présentation (PDF)','docs/agile-presentation-finale.pdf']]},
+
+{k:'dev', cat:'dev', catl:'Développement temps réel', dt:'2024 à 2025',
+ t:'Jeu de plateforme 2D sous Unity',
+ p:"Projet personnel écrit en C# depuis une page blanche, sans modèle tout fait. Déplacement et saut avec gestion de la gravité, deux comportements d'ennemis dont une poursuite déclenchée par rayon de détection, système de vie relié à l'interface, collectables et gestionnaire de partie centralisé.",
+ tags:['Unity','C#','Physique 2D','Machine à états','TextMesh Pro'],
+ imgs:[],
+ links:[['Étude détaillée',B+'jeu-unity-2d.html']]}
+];
+
+/* couvertures générées par catégorie */
+var GLYPH = {
+ dev:'<svg viewBox="0 0 48 48" fill="none" stroke="#3ecf8e" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 15 7 24l10 9M31 15l10 9-10 9M27 11l-6 26"/></svg>',
+ sec:'<svg viewBox="0 0 48 48" fill="none" stroke="#fb7185" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 5 8 12v12c0 10 7 16.5 16 19 9-2.5 16-9 16-19V12L24 5Z"/><path d="m17 24 5 5 9-10"/></svg>',
+ inf:'<svg viewBox="0 0 48 48" fill="none" stroke="#a78bfa" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="7" width="34" height="11" rx="2.5"/><rect x="7" y="30" width="34" height="11" rx="2.5"/><path d="M13 12.5h.02M13 35.5h.02M24 18v12"/></svg>',
+ gov:'<svg viewBox="0 0 48 48" fill="none" stroke="#fbbf24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 7h18l8 8v26a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/><path d="M28 7v9h9M16 26h16M16 33h11"/></svg>'
+};
+var GLOW = {dev:'rgba(62,207,142,.1)', sec:'rgba(251,113,133,.1)', inf:'rgba(167,139,250,.1)', gov:'rgba(251,191,36,.1)'};
+
+/* ============ RENDU : COMPETENCES ============ */
+function initial(n){ return n.replace(/[^A-Za-z0-9]/g,'').slice(0,2).toUpperCase(); }
+function svgIcon(key,fallbackName,color){
+  var ic = window.ICONS && window.ICONS[key];
+  if(!ic) return '<span class="mono-ic" style="background:'+color+'">'+initial(fallbackName)+'</span>';
+  var paths = ic.d.map(function(d){ return '<path d="'+d+'"/>'; }).join('');
+  if(ic.t==='f') return '<svg viewBox="'+ic.vb+'" fill="'+ic.c+'" aria-hidden="true">'+paths+'</svg>';
+  return '<svg viewBox="'+ic.vb+'" fill="none" stroke="'+ic.c+'" stroke-width="1.65" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+paths+'</svg>';
+}
+(function(){
+  var h='';
+  STACK.forEach(function(s){
+    h+='<div class="scard rv"><h3><span class="dot" style="background:'+s.c+'"></span>'+s.t+'<span class="cnt">'+s.items.length+'</span></h3><p>'+s.d+'</p><div class="logos">';
+    s.items.forEach(function(it){
+      h+='<div class="lg" title="'+it[0]+'">'+svgIcon(it[1],it[0],s.c)+'<em>'+it[0]+'</em></div>';
+    });
+    h+='</div></div>';
+  });
+  document.getElementById('stackgrid').innerHTML=h;
+})();
+
+/* ============ RENDU : CERTIFICATIONS ============ */
+document.getElementById('certs').innerHTML = CERTS.map(function(c){
+  return '<div class="cert"><span class="chk"><svg viewBox="0 0 24 24"><path d="m4 12 6 6L20 6"/></svg></span><div><div class="cn">'+c[0]+'</div><div class="co">'+c[1]+'</div></div></div>';
+}).join('');
+
+/* ============ RENDU : PROJETS ============ */
+var GAL = [];
+(function(){
+  var h='';
+  PROJ.forEach(function(p,pi){
+    var head;
+    if(p.imgs && p.imgs.length){
+      GAL[pi]=p.imgs;
+      head = '<div class="shot" data-p="'+pi+'" data-i="0">'
+           + '<img src="'+IM+p.imgs[0][0]+'.jpg" alt="'+p.imgs[0][1]+'" loading="lazy">'
+           + (p.imgs.length>1?'<span class="count">'+p.imgs.length+' captures</span>':'')
+           + '<span class="zoom">Agrandir</span></div>';
+    } else {
+      head = '<div class="cover" style="--gl:'+GLOW[p.cat]+'"><span class="gridbg"></span>'+GLYPH[p.cat]+'</div>';
+    }
+    h+='<article class="proj rv'+(p.wide?' wide':'')+'" data-c="'+p.k+'">'+head
+      +'<div class="pbody"><div class="ptop"><span class="cat '+p.cat+'">'+p.catl+'</span><span class="dt">'+p.dt+'</span></div>'
+      +'<h3>'+p.t+'</h3><p>'+p.p+'</p>'
+      +'<div class="tags">'+p.tags.map(function(t){return '<span class="tg">'+t+'</span>';}).join('')+'</div>'
+      +'<div class="links">'+p.links.map(function(l){
+          var ext = /^https?:/.test(l[1]);
+          return '<a href="'+l[1]+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+l[0]+' &rarr;</a>';
+        }).join('')+'</div></div></article>';
+  });
+  document.getElementById('grid').innerHTML=h;
+})();
+
+/* ============ FILTRES ============ */
+(function(){
+  var fs=[].slice.call(document.querySelectorAll('.f'));
+  var cs=[].slice.call(document.querySelectorAll('.proj'));
+  fs.forEach(function(b){
+    b.addEventListener('click',function(){
+      var f=b.dataset.f;
+      fs.forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
+      cs.forEach(function(c){
+        var ok = f==='all' || c.dataset.c.split(' ').indexOf(f)!==-1;
+        if(ok){ c.style.display=''; requestAnimationFrame(function(){c.style.opacity='1';c.style.transform='none';}); }
+        else { c.style.opacity='0'; c.style.transform='scale(.97)'; setTimeout(function(){ if(c.style.opacity==='0') c.style.display='none'; },260); }
       });
     });
   });
 })();
-</script>
 
+/* ============ LIGHTBOX ============ */
+(function(){
+  var lb=document.getElementById('lb'), im=document.getElementById('lbimg'),
+      cp=document.getElementById('lbc'), ix=document.getElementById('lbi');
+  var cur=null, idx=0;
+  function show(){ var g=GAL[cur]; im.src=IM+g[idx][0]+'.jpg'; im.alt=g[idx][1]; cp.textContent=g[idx][1]; ix.textContent=(idx+1)+' / '+g.length;
+    document.getElementById('lbp').style.display=document.getElementById('lbn').style.display=(g.length>1?'':'none'); }
+  function open(p){ cur=p; idx=0; lb.classList.add('on'); document.body.style.overflow='hidden'; show(); }
+  function close(){ lb.classList.remove('on'); document.body.style.overflow=''; cur=null; }
+  function go(d){ var g=GAL[cur]; idx=(idx+d+g.length)%g.length; show(); }
+  document.getElementById('grid').addEventListener('click',function(e){
+    var s=e.target.closest('.shot'); if(s) open(+s.dataset.p);
+  });
+  document.getElementById('lbx').onclick=close;
+  document.getElementById('lbp').onclick=function(e){e.stopPropagation();go(-1);};
+  document.getElementById('lbn').onclick=function(e){e.stopPropagation();go(1);};
+  lb.addEventListener('click',function(e){ if(e.target===lb) close(); });
+  document.addEventListener('keydown',function(e){
+    if(cur===null) return;
+    if(e.key==='Escape') close();
+    if(e.key==='ArrowRight') go(1);
+    if(e.key==='ArrowLeft') go(-1);
+  });
+})();
+
+/* ============ REVELATION AU DEFILEMENT ============ */
+(function(){
+  var els=[].slice.call(document.querySelectorAll('.rv'));
+  if(!('IntersectionObserver' in window) || RM){ els.forEach(function(e){e.classList.add('in');}); return; }
+  var o=new IntersectionObserver(function(en){
+    en.forEach(function(x,i){ if(x.isIntersecting){ setTimeout(function(){x.target.classList.add('in');}, i*70); o.unobserve(x.target); } });
+  },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){o.observe(e);});
+})();
+
+/* ============ COMPTEURS ============ */
+(function(){
+  var ns=[].slice.call(document.querySelectorAll('.st .n'));
+  function run(el){
+    var to=+el.dataset.to, suf=el.dataset.suf||'', t0=null, dur=1500;
+    function step(t){ if(!t0)t0=t; var k=Math.min((t-t0)/dur,1); var e=1-Math.pow(1-k,3);
+      el.textContent=Math.round(to*e).toLocaleString('fr-FR')+(k===1?suf:''); if(k<1) requestAnimationFrame(step); }
+    requestAnimationFrame(step);
+  }
+  if(!('IntersectionObserver' in window)){ ns.forEach(function(n){n.textContent=(+n.dataset.to).toLocaleString('fr-FR')+(n.dataset.suf||'');}); return; }
+  var o=new IntersectionObserver(function(en){ en.forEach(function(x){ if(x.isIntersecting){ run(x.target); o.unobserve(x.target); } }); },{threshold:.5});
+  ns.forEach(function(n){o.observe(n);});
+})();
+
+/* ============ TEXTE TAPE ============ */
+(function(){
+  var el=document.getElementById('typed');
+  var L=['> Master Cybersécurité · EFREI Paris','> Sécurité opérationnelle & détection','> Infrastructures, réseaux & durcissement','> Développement web sécurisé','> Gouvernance SSI · ISO 27005 · EBIOS RM'];
+  var car='<span class="caret"></span>';
+  if(RM){ el.innerHTML=L[0]+car; return; }
+  var li=0,ci=0,del=false;
+  function tick(){
+    var s=L[li];
+    ci += del ? -1 : 1;
+    el.innerHTML = s.slice(0,ci)+car;
+    var d = del ? 26 : 52;
+    if(!del && ci===s.length){ del=true; d=2100; }
+    else if(del && ci===0){ del=false; li=(li+1)%L.length; d=280; }
+    setTimeout(tick,d);
+  }
+  setTimeout(tick,650);
+})();
+
+/* ============ NAV : ETAT + SECTION ACTIVE ============ */
+(function(){
+  var nav=document.getElementById('nav'), prog=document.getElementById('prog');
+  var links=[].slice.call(document.querySelectorAll('.nlinks a'));
+  var secs=links.map(function(a){return document.querySelector(a.getAttribute('href'));});
+  function onScroll(){
+    var y=window.scrollY;
+    nav.classList.toggle('on', y>30);
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    prog.style.width=(h>0?(y/h*100):0)+'%';
+    var act=-1;
+    secs.forEach(function(s,i){ if(s && s.getBoundingClientRect().top<=140) act=i; });
+    links.forEach(function(a,i){ a.classList.toggle('act', i===act); });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+  var bg=document.getElementById('bg'), nl=document.getElementById('nl');
+  bg.addEventListener('click',function(){ nl.classList.toggle('open'); });
+  nl.addEventListener('click',function(e){ if(e.target.tagName==='A') nl.classList.remove('open'); });
+})();
+
+/* ============ CANVAS : RESEAU ANIME ============ */
+(function(){
+  var cv=document.getElementById('net'); if(!cv) return;
+  var ctx=cv.getContext('2d'), W=0,H=0,dpr=Math.min(window.devicePixelRatio||1,2);
+  var nodes=[], pkts=[], mouse={x:-9999,y:-9999}, running=true;
+  function size(){
+    var r=cv.getBoundingClientRect(); W=r.width; H=r.height;
+    cv.width=W*dpr; cv.height=H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+    build();
+  }
+  function build(){
+    var n=Math.round(Math.min(Math.max(W*H/16000,34),96));
+    nodes=[];
+    for(var i=0;i<n;i++) nodes.push({
+      x:Math.random()*W, y:Math.random()*H,
+      vx:(Math.random()-.5)*.22, vy:(Math.random()-.5)*.22,
+      r:Math.random()*1.5+.9, h:Math.random()<.12
+    });
+    pkts=[];
+  }
+  var LINK=118;
+  function draw(){
+    if(!running){ return; }
+    ctx.clearRect(0,0,W,H);
+    var i,j,a,b,dx,dy,d;
+    /* liens */
+    for(i=0;i<nodes.length;i++){
+      a=nodes[i];
+      for(j=i+1;j<nodes.length;j++){
+        b=nodes[j]; dx=a.x-b.x; dy=a.y-b.y; d=Math.sqrt(dx*dx+dy*dy);
+        if(d<LINK){
+          var al=(1-d/LINK)*.3;
+          ctx.strokeStyle='rgba(62,207,142,'+al.toFixed(3)+')';
+          ctx.lineWidth=.6; ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+          if(Math.random()<0.00055 && pkts.length<26) pkts.push({a:a,b:b,t:0,s:.012+Math.random()*.016});
+        }
+      }
+    }
+    /* paquets */
+    for(i=pkts.length-1;i>=0;i--){
+      var p=pkts[i]; p.t+=p.s;
+      if(p.t>=1){ pkts.splice(i,1); continue; }
+      var px=p.a.x+(p.b.x-p.a.x)*p.t, py=p.a.y+(p.b.y-p.a.y)*p.t;
+      var fade=Math.sin(p.t*Math.PI);
+      ctx.fillStyle='rgba(125,211,252,'+(fade*.85).toFixed(3)+')';
+      ctx.beginPath(); ctx.arc(px,py,1.9,0,6.2832); ctx.fill();
+      ctx.fillStyle='rgba(125,211,252,'+(fade*.18).toFixed(3)+')';
+      ctx.beginPath(); ctx.arc(px,py,5.5,0,6.2832); ctx.fill();
+    }
+    /* noeuds */
+    for(i=0;i<nodes.length;i++){
+      a=nodes[i];
+      a.x+=a.vx; a.y+=a.vy;
+      if(a.x<0||a.x>W) a.vx*=-1;
+      if(a.y<0||a.y>H) a.vy*=-1;
+      dx=a.x-mouse.x; dy=a.y-mouse.y; d=Math.sqrt(dx*dx+dy*dy);
+      if(d<130 && d>0.1){ a.x+=dx/d*1.5; a.y+=dy/d*1.5; }
+      ctx.fillStyle = a.h ? 'rgba(62,207,142,.95)' : 'rgba(210,220,230,.5)';
+      ctx.beginPath(); ctx.arc(a.x,a.y,a.r,0,6.2832); ctx.fill();
+      if(a.h){ ctx.fillStyle='rgba(62,207,142,.13)'; ctx.beginPath(); ctx.arc(a.x,a.y,a.r*4.5,0,6.2832); ctx.fill(); }
+    }
+    requestAnimationFrame(draw);
+  }
+  window.addEventListener('resize',size);
+  window.addEventListener('mousemove',function(e){
+    var r=cv.getBoundingClientRect(); mouse.x=e.clientX-r.left; mouse.y=e.clientY-r.top;
+  });
+  window.addEventListener('mouseout',function(){ mouse.x=mouse.y=-9999; });
+  /* met en pause hors écran */
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(en){
+      en.forEach(function(x){
+        if(x.isIntersecting && !running){ running=true; requestAnimationFrame(draw); }
+        else if(!x.isIntersecting){ running=false; }
+      });
+    },{threshold:0}).observe(cv);
+  }
+  size();
+  if(RM){ running=false; ctx.clearRect(0,0,W,H);
+    /* rendu statique discret */
+    for(var i=0;i<nodes.length;i++){ var a=nodes[i]; ctx.fillStyle='rgba(210,220,230,.35)'; ctx.beginPath(); ctx.arc(a.x,a.y,a.r,0,6.2832); ctx.fill(); }
+  } else { requestAnimationFrame(draw); }
+})();
+
+})();
+</script>
 </body>
 </html>

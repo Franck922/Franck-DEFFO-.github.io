@@ -38,6 +38,10 @@ title: Analyse de Menaces MITRE ATT&CK
 
 <p><strong>Conclusion :</strong> Ce travail d'analyse m'a doté d'une forte capacité de modélisation des menaces (Threat Modeling). Je sais désormais exploiter des bases de connaissances CTI pour orienter l'architecture de sécurité, transformer la donnée de renseignement en actions techniques concrètes, et aligner ces choix avec la stratégie globale des risques (ISO 27005).</p>
 
+<h2>📄 Documentation</h2>
+
+<div class="card-result">📎 <a href="{{ '/Rapport-MITRE-Franck-DEFFO.pdf' | relative_url }}">Rapport d'analyse MITRE ATT&CK et D3FEND (PDF)</a></div>
+
 <a href="{{ '/' | relative_url }}" class="back-link">← Retour au portfolio</a>
 
 </div>

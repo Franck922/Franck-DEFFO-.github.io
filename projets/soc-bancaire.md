@@ -45,6 +45,11 @@ title: SOC & Supervision Bancaire
 
 <p><strong>Conclusion :</strong> Ce projet prouve ma capacité à intégrer et configurer des outils open-source standards de l'industrie (Wazuh, Zabbix, Grafana) pour bâtir une chaîne de défense robuste. J'ai compris l'importance de la corrélation des événements et de la réduction du bruit (faux positifs) pour ne pas noyer les analystes SOC sous les alertes.</p>
 
+<h2>📄 Documentation</h2>
+
+<div class="card-result">📎 <a href="{{ '/docs/rapport-technique-soc-bancaire.pdf' | relative_url }}">Rapport technique du SOC bancaire (PDF)</a></div>
+<div class="card-result">📎 <a href="{{ '/docs/poc-soc-bancaire.pdf' | relative_url }}">Réalisation du POC, mise en place du SOC (PDF)</a></div>
+
 <a href="{{ '/' | relative_url }}" class="back-link">← Retour au portfolio</a>
 
 </div>

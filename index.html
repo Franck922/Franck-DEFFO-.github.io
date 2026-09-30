@@ -1,263 +1,478 @@
----
-layout: default
-title: Franck DEFFO | Cybersécurité & Infrastructures SI
----
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Franck DEFFO · Cybersécurité, Infrastructures &amp; Développement</title>
+<meta name="description" content="Étudiant en Master Cybersécurité à l'EFREI Paris. Portfolio technique : développement web, sécurité opérationnelle, infrastructures et gouvernance SSI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg-primary:#f8fafc; --bg-secondary:#ffffff; --bg-card:#ffffff;
+  --border-light:#e2e8f0; --border-hover:#cbd5e1;
+  --text-primary:#0f172a; --text-secondary:#475569; --text-muted:#64748b;
+  --accent-blue:#4f46e5; --accent-blue-hover:#4338ca;
+  --accent-cyan:#0284c7; --accent-purple:#6366f1;
+  --accent-green:#059669; --accent-amber:#d97706;
+  --font-body:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --font-mono:'JetBrains Mono','Fira Code',monospace;
+  --radius-sm:8px; --radius-md:12px; --radius-lg:20px;
+  --shadow-sm:0 1px 2px 0 rgba(0,0,0,.05);
+  --shadow-card:0 4px 6px -1px rgba(0,0,0,.05),0 2px 4px -2px rgba(0,0,0,.05);
+  --shadow-hover:0 20px 25px -5px rgba(0,0,0,.1),0 8px 10px -6px rgba(0,0,0,.1);
+  --transition:.3s ease; --max-width:1100px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg-primary);color:var(--text-primary);line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--max-width);margin:0 auto;padding:0 24px}
+.mono{font-family:var(--font-mono)}
 
-<!-- ===== HERO ===== -->
-<section class="hero">
-    <div class="hero-badge">Recherche Alternance 24 mois — Disponible Septembre 2026</div>
-    <h1>Franck DEFFO</h1>
-    <p class="hero-subtitle">
-        Je conçois, déploie et sécurise des <strong>infrastructures SI</strong> et des <strong>applications critiques</strong>.
-        Du développement d'outils de détection par Machine Learning à l'administration Windows Server,
-        je transforme les menaces en indicateurs de pilotage actionnables.
-    </p>
-    <div class="hero-links">
-        <a href="https://www.linkedin.com/in/franck-deffo" class="btn btn--primary" target="_blank">
-            LinkedIn
-        </a>
-        <a href="https://github.com/Franck922" class="btn btn--ghost" target="_blank">
-            GitHub
-        </a>
-        <a href="mailto:franckdeffo12@gmail.com" class="btn btn--ghost">
-            franckdeffo12@gmail.com
-        </a>
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-light)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-weight:700;font-size:16px;letter-spacing:-.2px}
+.brand span{color:var(--accent-blue)}
+.nav-links{display:flex;gap:28px;font-size:14.5px;color:var(--text-secondary);font-weight:500}
+.nav-links a:hover{color:var(--accent-blue)}
+.nav-cta{font-size:13.5px;font-weight:600;padding:9px 16px;border-radius:var(--radius-sm);background:var(--accent-blue);color:#fff;white-space:nowrap;transition:var(--transition)}
+.nav-cta:hover{background:var(--accent-blue-hover)}
+@media(max-width:860px){.nav-links{display:none}}
+
+header{padding:76px 0 60px;position:relative;overflow:hidden}
+header::before{content:'';position:absolute;top:-220px;left:50%;transform:translateX(-50%);width:900px;height:460px;border-radius:50%;background:radial-gradient(closest-side,rgba(99,102,241,.09),transparent 70%);pointer-events:none}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--accent-blue);background:rgba(79,70,229,.08);border:1px solid rgba(79,70,229,.2);padding:7px 15px;border-radius:999px;margin-bottom:24px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent-green);box-shadow:0 0 0 0 rgba(5,150,105,.5);animation:p 2.2s infinite}
+@keyframes p{70%{box-shadow:0 0 0 9px rgba(5,150,105,0)}100%{box-shadow:0 0 0 0 rgba(5,150,105,0)}}
+h1{font-size:clamp(34px,5.4vw,54px);line-height:1.12;font-weight:800;letter-spacing:-1.4px;margin-bottom:20px;color:var(--text-primary)}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--accent-blue),var(--accent-cyan));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lede{font-size:clamp(15.5px,1.7vw,18px);color:var(--text-secondary);max-width:740px;margin-bottom:12px}
+.lede strong{color:var(--text-primary);font-weight:600}
+.rythme{font-size:14.5px;color:var(--text-muted);margin-bottom:32px}
+.rythme b{color:var(--accent-green);font-weight:600}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:48px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:var(--radius-sm);font-size:14.5px;font-weight:600;border:1px solid var(--border-light);background:var(--bg-secondary);color:var(--text-primary);box-shadow:var(--shadow-sm);transition:var(--transition)}
+.btn:hover{border-color:var(--accent-blue);color:var(--accent-blue);transform:translateY(-1px);box-shadow:var(--shadow-card)}
+.btn.primary{background:var(--accent-blue);color:#fff;border-color:var(--accent-blue)}
+.btn.primary:hover{background:var(--accent-blue-hover);color:#fff}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px}
+.stat{background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:22px 20px;box-shadow:var(--shadow-sm)}
+.stat .n{font-size:28px;font-weight:800;color:var(--accent-blue);letter-spacing:-1px;line-height:1.1}
+.stat .l{font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.7px;margin-top:6px;font-weight:600}
+
+section{padding:70px 0;border-top:1px solid var(--border-light)}
+.sec-head{margin-bottom:36px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:var(--accent-blue);margin-bottom:10px}
+h2{font-size:clamp(26px,3.4vw,34px);font-weight:800;letter-spacing:-.9px;margin-bottom:10px}
+.sec-sub{color:var(--text-secondary);font-size:15.5px;max-width:700px}
+
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:20px}
+.stack-card{background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:24px;box-shadow:var(--shadow-card)}
+.stack-card h3{font-size:13px;font-weight:700;letter-spacing:.9px;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.ic{width:28px;height:28px;border-radius:var(--radius-sm);display:grid;place-items:center;font-size:13px}
+.ic.c1{background:rgba(79,70,229,.1);color:var(--accent-blue)}
+.ic.c2{background:rgba(2,132,199,.1);color:var(--accent-cyan)}
+.ic.c3{background:rgba(5,150,105,.1);color:var(--accent-green)}
+.tags{display:flex;flex-wrap:wrap;gap:7px}
+.tag{font-family:var(--font-mono);font-size:11.5px;padding:5px 10px;border-radius:6px;background:var(--bg-primary);border:1px solid var(--border-light);color:var(--text-secondary)}
+.tag.hot{border-color:rgba(79,70,229,.3);color:var(--accent-blue);background:rgba(79,70,229,.05);font-weight:600}
+
+.filters{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:28px}
+.filter{font-size:13.5px;font-weight:600;padding:9px 17px;border-radius:999px;background:var(--bg-secondary);border:1px solid var(--border-light);color:var(--text-secondary);cursor:pointer;transition:var(--transition);font-family:inherit;box-shadow:var(--shadow-sm)}
+.filter:hover{border-color:var(--border-hover);color:var(--text-primary)}
+.filter[aria-pressed="true"]{background:var(--accent-blue);border-color:var(--accent-blue);color:#fff}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:20px}
+.proj{background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-md);padding:26px;display:flex;flex-direction:column;transition:var(--transition);box-shadow:var(--shadow-card)}
+.proj:hover{border-color:var(--border-hover);transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.proj.feat{border-color:rgba(79,70,229,.28);background:linear-gradient(165deg,rgba(99,102,241,.04),var(--bg-card) 55%)}
+.proj-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px}
+.cat{font-size:10.5px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;padding:4px 9px;border-radius:5px;white-space:nowrap}
+.cat.dev{background:rgba(79,70,229,.1);color:var(--accent-blue)}
+.cat.sec{background:rgba(2,132,199,.1);color:var(--accent-cyan)}
+.cat.infra{background:rgba(5,150,105,.1);color:var(--accent-green)}
+.cat.gov{background:rgba(217,119,6,.1);color:var(--accent-amber)}
+.date{font-size:11.5px;color:var(--text-muted);white-space:nowrap;font-family:var(--font-mono)}
+.proj h3{font-size:18px;font-weight:700;line-height:1.3;margin-bottom:10px;letter-spacing:-.3px}
+.proj p{font-size:14.5px;color:var(--text-secondary);margin-bottom:15px;flex-grow:1}
+.kpi{font-size:12.5px;color:var(--accent-green);font-weight:600;padding:10px 13px;background:rgba(5,150,105,.05);border-left:3px solid var(--accent-green);border-radius:0 6px 6px 0;margin-bottom:15px}
+.proj .tags{margin-bottom:17px}
+.links{display:flex;flex-wrap:wrap;gap:16px;font-size:13.5px;font-weight:600;padding-top:15px;border-top:1px solid var(--border-light)}
+.links a{color:var(--accent-blue)}
+.links a:hover{color:var(--accent-blue-hover)}
+.links .muted{color:var(--text-muted);font-weight:500;cursor:default}
+
+.tl{position:relative;padding-left:30px}
+.tl::before{content:'';position:absolute;left:6px;top:8px;bottom:8px;width:2px;background:var(--border-light)}
+.tl-item{position:relative;padding-bottom:30px}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:'';position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg-primary);border:2.5px solid var(--accent-blue)}
+.tl-item h3{font-size:17px;font-weight:700;margin-bottom:4px}
+.tl-meta{font-size:13px;color:var(--text-muted);margin-bottom:8px;font-family:var(--font-mono)}
+.tl-item p{font-size:14.5px;color:var(--text-secondary)}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+@media(max-width:820px){.two-col{grid-template-columns:1fr;gap:48px}}
+.certs{display:flex;flex-direction:column;gap:11px}
+.cert{display:flex;gap:13px;align-items:flex-start;background:var(--bg-card);border:1px solid var(--border-light);border-radius:var(--radius-sm);padding:15px 17px;box-shadow:var(--shadow-sm)}
+.cert .cn{font-size:14.5px;font-weight:600;line-height:1.35}
+.cert .co{font-size:12.5px;color:var(--text-muted);margin-top:2px}
+
+.contact-box{background:linear-gradient(150deg,rgba(99,102,241,.07),var(--bg-card) 60%);border:1px solid rgba(79,70,229,.2);border-radius:var(--radius-lg);padding:48px 36px;text-align:center;box-shadow:var(--shadow-card)}
+.contact-box h2{margin-bottom:12px}
+.contact-box p{color:var(--text-secondary);max-width:560px;margin:0 auto 28px;font-size:15.5px}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+
+footer{border-top:1px solid var(--border-light);padding:32px 0;text-align:center;color:var(--text-muted);font-size:13.5px}
+.hidden{display:none !important}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="brand">Franck <span>DEFFO</span></a>
+    <div class="nav-links">
+      <a href="#stack">Stack</a>
+      <a href="#projets">Projets</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#formation">Formation</a>
     </div>
+    <a href="#contact" class="nav-cta">Me contacter</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap">
+    <div class="badge"><span class="dot"></span> Recherche une alternance · Disponible immédiatement</div>
+    <h1>Je conçois, développe<br>et sécurise des <em>systèmes d'information</em>.</h1>
+    <p class="lede">Étudiant en <strong>Master Cybersécurité à l'EFREI Paris</strong>, avec un parcours partagé entre le développement d'applications et la sécurité des infrastructures. Des applications web livrées de bout en bout, des SOC déployés, des analyses de risques menées jusqu'au plan de traitement.</p>
+    <p class="rythme">Alternance 24 mois dès septembre 2026 · Rythme <b>1 semaine école / 2 semaines entreprise</b> · Île-de-France</p>
+
+    <div class="cta-row">
+      <a href="#projets" class="btn primary">Voir les projets</a>
+      <a href="https://github.com/Franck922" target="_blank" rel="noopener" class="btn">GitHub</a>
+      <a href="https://www.linkedin.com/in/franck-deffo" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+      <a href="mailto:franckdeffo12@gmail.com" class="btn">Email</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n">13</div><div class="l">Projets techniques</div></div>
+      <div class="stat"><div class="n">14 800+</div><div class="l">Événements analysés</div></div>
+      <div class="stat"><div class="n">86</div><div class="l">Tests E2E automatisés</div></div>
+      <div class="stat"><div class="n">6</div><div class="l">Certifications</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="stack">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Compétences</div>
+      <h2>Stack technique</h2>
+      <p class="sec-sub">Les technologies que j'utilise réellement sur mes projets, et non une liste de veille.</p>
+    </div>
+    <div class="stack">
+
+      <div class="stack-card">
+        <h3><span class="ic c1">&lt;/&gt;</span> Développement &amp; données</h3>
+        <div class="tags">
+          <span class="tag hot">TypeScript</span><span class="tag hot">JavaScript</span>
+          <span class="tag hot">React 19</span><span class="tag hot">Next.js</span>
+          <span class="tag hot">Node.js</span><span class="tag hot">NestJS</span><span class="tag hot">Express</span>
+          <span class="tag">Vue.js 3</span>
+          <span class="tag">PHP</span><span class="tag">Laravel</span>
+          <span class="tag">Java</span><span class="tag">Spring Boot</span>
+          <span class="tag">Python</span><span class="tag">FastAPI</span>
+          <span class="tag">C#</span><span class="tag">Unity</span>
+          <span class="tag">PostgreSQL</span><span class="tag">MySQL</span><span class="tag">MongoDB</span>
+          <span class="tag">API REST</span><span class="tag">Swagger</span><span class="tag">Tailwind</span>
+          <span class="tag">Git</span><span class="tag">JUnit</span><span class="tag">PHPUnit</span>
+        </div>
+      </div>
+
+      <div class="stack-card">
+        <h3><span class="ic c2">🛡</span> Sécurité &amp; gouvernance</h3>
+        <div class="tags">
+          <span class="tag hot">SIEM Wazuh</span><span class="tag hot">EDR</span>
+          <span class="tag">Sysmon</span><span class="tag">Winlogbeat</span>
+          <span class="tag">Snort IDS/IPS</span><span class="tag">FIM</span>
+          <span class="tag hot">ISO 27005</span><span class="tag">ISO 27001</span>
+          <span class="tag hot">EBIOS RM</span><span class="tag">MITRE ATT&amp;CK</span><span class="tag">MITRE D3FEND</span>
+          <span class="tag hot">OWASP Top 10</span><span class="tag">RGPD</span><span class="tag">Référentiel HDS</span>
+          <span class="tag">PSSI</span><span class="tag">JWT / MFA</span>
+          <span class="tag">Bcrypt / Argon2</span><span class="tag">PKI X.509</span>
+        </div>
+      </div>
+
+      <div class="stack-card">
+        <h3><span class="ic c3">⚙</span> Infrastructures &amp; réseaux</h3>
+        <div class="tags">
+          <span class="tag hot">Windows Server</span><span class="tag hot">Active Directory</span>
+          <span class="tag">GPO</span><span class="tag">Linux</span>
+          <span class="tag hot">Docker</span><span class="tag">VMware</span>
+          <span class="tag">Cisco IOS</span><span class="tag">VLAN / 802.1Q</span>
+          <span class="tag">OSPF</span><span class="tag">NAT / PAT</span>
+          <span class="tag">VPN IPsec</span><span class="tag">OpenVPN</span>
+          <span class="tag">pfSense</span><span class="tag">Zabbix</span><span class="tag">Grafana</span>
+          <span class="tag">PowerShell</span><span class="tag">Wireshark</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<!-- ===== STATS ===== -->
-<section class="stats-bar">
-    <div class="stat-item">
-        <span class="stat-number">100%</span>
-        <span class="stat-label">Précision SecureLink</span>
+<section id="projets">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Réalisations</div>
+      <h2>Projets</h2>
+      <p class="sec-sub">Treize projets menés en école et en autonomie. Chacun renvoie vers son dépôt de code ou sa documentation.</p>
     </div>
-    <div class="stat-item">
-        <span class="stat-number">14 800+</span>
-        <span class="stat-label">Événements analysés (EDR)</span>
+
+    <div class="filters" role="group" aria-label="Filtrer les projets">
+      <button class="filter" data-f="all" aria-pressed="true">Tous</button>
+      <button class="filter" data-f="dev" aria-pressed="false">Développement</button>
+      <button class="filter" data-f="sec" aria-pressed="false">Cybersécurité</button>
+      <button class="filter" data-f="infra" aria-pressed="false">Infrastructures</button>
+      <button class="filter" data-f="gov" aria-pressed="false">Gouvernance</button>
     </div>
-    <div class="stat-item">
-        <span class="stat-number">86</span>
-        <span class="stat-label">Tests E2E automatisés</span>
+
+    <div class="grid" id="grid">
+
+      <!-- SECURELINK -->
+      <article class="proj feat" data-c="dev sec">
+        <div class="proj-top"><span class="cat dev">Dev · IA · Sécurité</span><span class="date">OCT 2025 à MARS 2026</span></div>
+        <h3>SecureLink : détection de phishing par IA</h3>
+        <p>Projet de fin d'études. Plateforme web d'analyse d'URL en temps réel, avec un moteur hybride à douze couches combinant un modèle RandomForest, la détection de typosquattage par distance de Levenshtein, l'analyse SSL/TLS, DNS et WHOIS, et le fingerprinting de kits de phishing. Protection anti-SSRF intégrée.</p>
+        <div class="kpi">100 % de précision sur un banc de 74 URL · verdict en moins de 3 secondes</div>
+        <div class="tags"><span class="tag">React 19</span><span class="tag">FastAPI</span><span class="tag">MongoDB</span><span class="tag">Python Asyncio</span><span class="tag">RandomForest</span><span class="tag">Playwright</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/pfe-securelink.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/docs/securelink-description-fonctionnelle.pdf" target="_blank" rel="noopener">Description fonctionnelle (PDF) →</a></div>
+      </article>
+
+      <!-- EDR -->
+      <article class="proj feat" data-c="sec dev">
+        <div class="proj-top"><span class="cat sec">Sécurité · Dev</span><span class="date">JUIL à AOÛT 2026</span></div>
+        <h3>Infrastructure EDR &amp; console SOC</h3>
+        <p>Chaîne complète de détection et réponse : capteur Windows, moteur de détection hybride combinant règles heuristiques et machine learning, riposte automatique et console SOC multi-analystes conteneurisée.</p>
+        <div class="kpi">F1-score de 1.00 sur 14 800+ événements · blocage en quelques secondes · 86 tests E2E</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">PostgreSQL</span><span class="tag">FastAPI</span><span class="tag">React</span><span class="tag">Docker</span><span class="tag">Sysmon</span><span class="tag">PowerShell</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/edr-console-soc.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://github.com/Franck922/ransomware-detector" target="_blank" rel="noopener">Code source →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/docs/rapport-stage-ransomware-detector.pdf" target="_blank" rel="noopener">Rapport (PDF) →</a></div>
+      </article>
+
+      <!-- TELECARE HDS -->
+      <article class="proj feat" data-c="gov sec">
+        <div class="proj-top"><span class="cat gov">Gouvernance · Santé</span><span class="date">2026</span></div>
+        <h3>TeleCare : gouvernance SSI et conformité HDS</h3>
+        <p>Mission de RSSI simulée pour une startup de télémédecine traitant les données de 20 000 patients. Construction du socle documentaire en vue de la certification HDS : PSSI, politique de protection des données de santé, sécurité des API, habilitations et procédure de gestion des incidents.</p>
+        <div class="kpi">300 médecins et 50 établissements couverts · référentiels HDS, ISO 27001 et RGPD</div>
+        <div class="tags"><span class="tag">HDS</span><span class="tag">ISO 27001</span><span class="tag">RGPD</span><span class="tag">PSSI</span><span class="tag">MFA</span><span class="tag">Sécurité des API</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/telecare-hds.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/docs/pssi-telecare-hds.pdf" target="_blank" rel="noopener">PSSI (PDF) →</a></div>
+      </article>
+
+      <!-- SOC BANCAIRE -->
+      <article class="proj" data-c="sec infra">
+        <div class="proj-top"><span class="cat sec">Sécurité opérationnelle</span><span class="date">FÉV à MARS 2026</span></div>
+        <h3>SOC et supervision d'un SI bancaire</h3>
+        <p>Déploiement d'un centre de supervision sur cinq machines virtuelles : SIEM Wazuh avec surveillance de l'intégrité des fichiers, supervision proactive via Zabbix et Grafana, détection des attaques par force brute SSH et analyse des requêtes HTTP malveillantes.</p>
+        <div class="kpi">Tableaux de bord traduisant les journaux techniques en indicateurs de risque</div>
+        <div class="tags"><span class="tag">Wazuh</span><span class="tag">Zabbix</span><span class="tag">Grafana</span><span class="tag">FIM</span><span class="tag">Linux</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/soc-bancaire.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/docs/rapport-technique-soc-bancaire.pdf" target="_blank" rel="noopener">Rapport technique (PDF) →</a></div>
+      </article>
+
+      <!-- GESTION VOYAGES LARAVEL VUE -->
+      <article class="proj" data-c="dev">
+        <div class="proj-top"><span class="cat dev">Développement web</span><span class="date">FÉV à MARS 2025</span></div>
+        <h3>Gestion de voyages : Laravel &amp; Vue.js</h3>
+        <p>Application complète à quatre modules administratifs (utilisateurs, vols, paiements, réservations). Conception du schéma de données, API REST, authentification sécurisée avec réinitialisation et vérification par e-mail, contrôle d'accès fin par Policies et Gates, journalisation centralisée et vues d'audit.</p>
+        <div class="tags"><span class="tag">Laravel</span><span class="tag">Vue 3</span><span class="tag">Tailwind</span><span class="tag">MySQL</span><span class="tag">Axios</span><span class="tag">Postman</span><span class="tag">PHPUnit</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/gestion-voyages-laravel.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://github.com/Franck922/projet_backend" target="_blank" rel="noopener">Backend →</a><a href="https://github.com/Franck922/projet_frontend" target="_blank" rel="noopener">Frontend →</a></div>
+      </article>
+
+      <!-- API JAVA SPRING -->
+      <article class="proj" data-c="dev">
+        <div class="proj-top"><span class="cat dev">Développement backend</span><span class="date">2025</span></div>
+        <h3>API REST de gestion de voyages en Java</h3>
+        <p>Architecture en couches (contrôleurs, services, repositories) avec gestion des transactions et traitement centralisé des erreurs. Documentation Swagger, tests JUnit, collections Postman réutilisables et optimisation des requêtes Hibernate.</p>
+        <div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Spring Data JPA</span><span class="tag">Hibernate</span><span class="tag">MySQL</span><span class="tag">Swagger</span><span class="tag">JUnit</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/api-java-spring.html" target="_blank" rel="noopener">Étude détaillée →</a></div>
+      </article>
+
+      <!-- POC CYBER LIMITED -->
+      <article class="proj" data-c="infra sec">
+        <div class="proj-top"><span class="cat infra">Infrastructure · Durcissement</span><span class="date">2025</span></div>
+        <h3>POC Cyber Limited : infrastructure durcie</h3>
+        <p>Création et durcissement d'une infrastructure d'entreprise de bout en bout : pare-feu pfSense en frontal, IDS Snort avec réglage des règles pour limiter les faux positifs, Fail2ban, stratégies de groupe et durcissement multi-systèmes.</p>
+        <div class="tags"><span class="tag">pfSense</span><span class="tag">Snort</span><span class="tag">Fail2ban</span><span class="tag">GPO</span><span class="tag">VMware</span><span class="tag">Wireshark</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/poc-cyberlimited.html" target="_blank" rel="noopener">Étude détaillée →</a></div>
+      </article>
+
+      <!-- TECHSECURE AD VPN -->
+      <article class="proj" data-c="infra sec">
+        <div class="proj-top"><span class="cat infra">Infrastructure · PKI</span><span class="date">NOV à DÉC 2025</span></div>
+        <h3>TechSecure : Active Directory &amp; VPN à certificats</h3>
+        <p>Annuaire Active Directory sous Windows Server 2019 (AD DS, DNS, unités d'organisation par service) couplé à un serveur OpenVPN sous Linux. Mise en place d'une autorité de certification interne et génération des certificats X.509 serveur et clients.</p>
+        <div class="tags"><span class="tag">Windows Server 2019</span><span class="tag">AD DS</span><span class="tag">GPO</span><span class="tag">OpenVPN</span><span class="tag">Easy-RSA</span><span class="tag">PKI</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/ad-vpn.html" target="_blank" rel="noopener">Étude détaillée →</a></div>
+      </article>
+
+      <!-- RESEAU MULTISITES -->
+      <article class="proj" data-c="infra">
+        <div class="proj-top"><span class="cat infra">Réseaux</span><span class="date">NOV 2025 à JANV 2026</span></div>
+        <h3>Réseau multi-sites et tunnel IPsec</h3>
+        <p>Architecture interconnectant plusieurs sites distants : segmentation VLAN avec trunking 802.1Q et propagation VTP, routage dynamique OSPF, NAT statique et PAT, tunnel IPsec site à site (AES et SHA-HMAC) et durcissement des équipements via SSHv2.</p>
+        <div class="tags"><span class="tag">Cisco IOS</span><span class="tag">VLAN</span><span class="tag">OSPF</span><span class="tag">IPsec</span><span class="tag">NAT/PAT</span><span class="tag">SSHv2</span><span class="tag">Wireshark</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/reseaux-multisites.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/docs/rapport-ospf-tp6.pdf" target="_blank" rel="noopener">Rapport OSPF (PDF) →</a></div>
+      </article>
+
+      <!-- ISO 27005 -->
+      <article class="proj" data-c="gov">
+        <div class="proj-top"><span class="cat gov">Gouvernance · Risques</span><span class="date">2025 à 2026</span></div>
+        <h3>Analyse de risques ISO 27005</h3>
+        <p>Analyse complète sur le système d'information d'une chaîne nationale de distribution : identification des actifs primordiaux et des biens supports, évaluation de la vraisemblance et de l'impact financier, juridique et d'image, puis élaboration d'un plan de traitement des risques hiérarchisé.</p>
+        <div class="tags"><span class="tag">ISO 27005</span><span class="tag">EBIOS RM</span><span class="tag">ISO 27001</span><span class="tag">GRC</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/grc-iso27005.html" target="_blank" rel="noopener">Étude détaillée →</a></div>
+      </article>
+
+      <!-- MITRE -->
+      <article class="proj" data-c="sec gov">
+        <div class="proj-top"><span class="cat sec">Analyse de menaces</span><span class="date">2025 à 2026</span></div>
+        <h3>Modélisation de menaces MITRE ATT&amp;CK et D3FEND</h3>
+        <p>Décomposition de deux scénarios d'attaque, sur un système de réservation hôtelier et sur un réseau industriel SCADA. Corrélation des techniques observées avec le référentiel ATT&amp;CK, puis définition de contre-mesures via D3FEND : durcissement des identifiants, isolation des sauvegardes et segmentation réseau.</p>
+        <div class="tags"><span class="tag">MITRE ATT&amp;CK</span><span class="tag">MITRE D3FEND</span><span class="tag">SCADA</span><span class="tag">Kill Chain</span><span class="tag">Nmap</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/mitre-analyse.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Rapport-MITRE-Franck-DEFFO.pdf" target="_blank" rel="noopener">Rapport (PDF) →</a></div>
+      </article>
+
+      <!-- AGILE OWASP -->
+      <article class="proj" data-c="dev gov">
+        <div class="proj-top"><span class="cat gov">Pilotage · Sécurité applicative</span><span class="date">NOV à DÉC 2025</span></div>
+        <h3>Pilotage agile et sécurisation applicative</h3>
+        <p>Étude de cas sur une plateforme de streaming : structuration en sprints avec backlog Jira et diagrammes de Gantt, stratégie d'authentification (double facteur, jetons JWT, gestion granulaire des rôles), audit des vulnérabilités du Top 10 OWASP et définition des standards de chiffrement.</p>
+        <div class="tags"><span class="tag">Scrum</span><span class="tag">Jira</span><span class="tag">OWASP Top 10</span><span class="tag">JWT</span><span class="tag">Bcrypt / Argon2</span><span class="tag">TLS</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/pilotage-agile.html" target="_blank" rel="noopener">Étude détaillée →</a><a href="https://franck922.github.io/Franck-DEFFO-.github.io/docs/agile-presentation-finale.pdf" target="_blank" rel="noopener">Présentation (PDF) →</a></div>
+      </article>
+
+      <!-- UNITY -->
+      <article class="proj" data-c="dev">
+        <div class="proj-top"><span class="cat dev">Développement · Temps réel</span><span class="date">2024 à 2025</span></div>
+        <h3>Jeu 2D sous Unity</h3>
+        <p>Jeu complet en C# : mécaniques de déplacement avec double saut et gestion de l'inertie, système de score et de chronomètre, machines d'états d'animation, et intelligence ennemie en patrouille, détection puis poursuite. Optimisation par pooling d'objets.</p>
+        <div class="tags"><span class="tag">Unity 2D</span><span class="tag">C#</span><span class="tag">Animator</span><span class="tag">Rigidbody2D</span><span class="tag">Tilemap</span></div>
+        <div class="links"><a href="https://franck922.github.io/Franck-DEFFO-.github.io/Projets/jeu-unity-2d.html" target="_blank" rel="noopener">Étude détaillée →</a></div>
+      </article>
+
     </div>
-    <div class="stat-item">
-        <span class="stat-number">6</span>
-        <span class="stat-label">Certifications Cyber</span>
-    </div>
+  </div>
 </section>
 
-<!-- ===== TECH STACK ===== -->
-<div class="section-title">
-    <div class="section-title__icon">🛠️</div>
-    <h2><span>Compétences</span>Stack Technique</h2>
-</div>
+<section id="parcours">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Expérience</div>
+      <h2>Parcours professionnel</h2>
+    </div>
+    <div class="tl">
+      <div class="tl-item">
+        <h3>Stagiaire technicien support IT, systèmes et réseaux</h3>
+        <div class="tl-meta">Juillet à septembre 2025 · Bureau Veritas · Douala, Cameroun</div>
+        <p>Prise en charge des incidents utilisateurs de niveau 1 et 2, du diagnostic à la résolution, avec escalade documentée vers les équipes concernées. Installation et maintenance du parc informatique. Participation à la rédaction des procédures de gestion des incidents.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Bénévole accueil et évènementiel</h3>
+        <div class="tl-meta">Depuis 2023 · Linkee · Paris</div>
+        <p>Accueil et orientation du public lors des distributions solidaires, organisation de la file et bon déroulement des opérations en forte affluence.</p>
+      </div>
+      <div class="tl-item">
+        <h3>Équipier polyvalent en restauration</h3>
+        <div class="tl-meta">Depuis août 2026 · Topivo · Île-de-France</div>
+        <p>Service client et préparation des commandes en environnement à fort passage, en coordination avec l'équipe.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="tech-grid">
-    <div class="tech-category">
-        <h4>Infrastructures & Réseaux</h4>
-        <div class="card-tags">
-            <span class="card-tag">Windows Server</span>
-            <span class="card-tag">Active Directory</span>
-            <span class="card-tag">Cisco (VLAN/OSPF)</span>
-            <span class="card-tag">Docker</span>
-            <span class="card-tag">VMware</span>
-            <span class="card-tag">pfSense</span>
+<section id="formation">
+  <div class="wrap">
+    <div class="two-col">
+      <div>
+        <div class="sec-head">
+          <div class="kicker">Études</div>
+          <h2>Formation</h2>
         </div>
-    </div>
-    <div class="tech-category">
-        <h4>Développement & Bases de Données</h4>
-        <div class="card-tags">
-            <span class="card-tag--purple card-tag">JavaScript / React 19</span>
-            <span class="card-tag--purple card-tag">Python / FastAPI</span>
-            <span class="card-tag--purple card-tag">PostgreSQL</span>
-            <span class="card-tag--purple card-tag">MongoDB</span>
-            <span class="card-tag--purple card-tag">PowerShell</span>
+        <div class="tl">
+          <div class="tl-item">
+            <h3>Master Cybersécurité (M1 &amp; M2)</h3>
+            <div class="tl-meta">2026 à 2028 · EFREI Paris</div>
+            <p>En alternance. Titre RNCP 39781 Expert Réseaux, Infrastructures et Sécurité.</p>
+          </div>
+          <div class="tl-item">
+            <h3>Bachelor 3 Cybersécurité &amp; Réseaux</h3>
+            <div class="tl-meta">2025 à 2026 · ECE Paris</div>
+          </div>
+          <div class="tl-item">
+            <h3>Bachelor 1 &amp; 2 Informatique</h3>
+            <div class="tl-meta">2023 à 2025 · Keyce Informatique &amp; IA · Douala</div>
+          </div>
         </div>
-    </div>
-    <div class="tech-category">
-        <h4>Sécurité & Gouvernance</h4>
-        <div class="card-tags">
-            <span class="card-tag--cyan card-tag">SIEM (Wazuh)</span>
-            <span class="card-tag--cyan card-tag">Sysmon / Winlogbeat</span>
-            <span class="card-tag--cyan card-tag">ISO 27001 / 27005</span>
-            <span class="card-tag--cyan card-tag">MITRE ATT&CK</span>
-            <span class="card-tag--cyan card-tag">Snort / IDS</span>
+      </div>
+      <div>
+        <div class="sec-head">
+          <div class="kicker">Validations</div>
+          <h2>Certifications</h2>
         </div>
+        <div class="certs">
+          <div class="cert"><div><div class="cn">Junior Cybersecurity Analyst</div><div class="co">Cisco Networking Academy</div></div></div>
+          <div class="cert"><div><div class="cn">Cyber Threat Management</div><div class="co">Cisco Networking Academy</div></div></div>
+          <div class="cert"><div><div class="cn">Network Defense</div><div class="co">Cisco Networking Academy</div></div></div>
+          <div class="cert"><div><div class="cn">SecNumacadémie</div><div class="co">ANSSI · 2025</div></div></div>
+          <div class="cert"><div><div class="cn">Tech Away Cyber, niveaux 2 et 3</div><div class="co">DataScientest</div></div></div>
+          <div class="cert"><div><div class="cn">Foundations of Cybersecurity · Manage Security Risks</div><div class="co">Google / Coursera · 2025</div></div></div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
 
-<!-- ===== FEATURED PROJECTS ===== -->
-<div class="section-title" id="projects">
-    <div class="section-title__icon">🚀</div>
-    <h2><span>Réalisations Majeures</span>Projets Phares</h2>
-</div>
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Parlons de votre besoin</h2>
+      <p>Je recherche une alternance de 24 mois à partir de septembre 2026, en sécurité opérationnelle, en infrastructures ou en développement sécurisé. Disponible dès maintenant, au rythme d'une semaine de cours pour deux semaines en entreprise.</p>
+      <div class="contact-links">
+        <a href="mailto:franckdeffo12@gmail.com" class="btn primary">franckdeffo12@gmail.com</a>
+        <a href="tel:+33745999754" class="btn">07 45 99 97 54</a>
+        <a href="https://www.linkedin.com/in/franck-deffo" target="_blank" rel="noopener" class="btn">LinkedIn</a>
+        <a href="https://github.com/Franck922" target="_blank" rel="noopener" class="btn">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="projects-grid">
-    <!-- SecureLink -->
-    <div class="card card--featured">
-        <span class="card-label">Projet de Fin d'Études · Oct 2025 – Mars 2026</span>
-        <h3><a href="{{ '/projets/pfe-securelink.html' | relative_url }}">SecureLink : Détection de Phishing par IA</a></h3>
-        <p class="card-desc">
-            Conception et développement de bout en bout d'une plateforme web "zéro friction" combinant
-            Machine Learning et règles heuristiques pour identifier les URLs de phishing en temps réel.
-        </p>
-        <div class="card-tags">
-            <span class="card-tag">React 19</span>
-            <span class="card-tag">FastAPI</span>
-            <span class="card-tag">MongoDB</span>
-            <span class="card-tag">Machine Learning</span>
-        </div>
-        <div class="card-result">
-            ✅ <strong>100% de précision</strong>&nbsp;sur un benchmark de 74 URLs · Moteur hybride 12 couches
-        </div>
-        <a href="{{ '/projets/pfe-securelink.html' | relative_url }}" class="card-link">Lire l'étude de cas</a>
-    </div>
+<footer>
+  <div class="wrap">Franck DEFFO · Paris · Master Cybersécurité EFREI Paris</div>
+</footer>
 
-    <!-- EDR -->
-    <div class="card card--featured card--purple">
-        <span class="card-label card-label--purple">Projet Opérationnel · Juil – Août 2026</span>
-        <h3><a href="{{ '/projets/edr-console-soc.html' | relative_url }}">Infrastructure EDR & Console SOC</a></h3>
-        <p class="card-desc">
-            Déploiement d'un laboratoire EDR complet (capteur Windows → détection hybride → riposte automatique)
-            et développement d'une console SOC multi-analystes conteneurisée.
-        </p>
-        <div class="card-tags">
-            <span class="card-tag--purple card-tag">Windows / Sysmon</span>
-            <span class="card-tag--purple card-tag">PowerShell</span>
-            <span class="card-tag--purple card-tag">Docker</span>
-            <span class="card-tag--purple card-tag">PostgreSQL</span>
-        </div>
-        <div class="card-result">
-            ⚡ Blocage automatique en <strong>quelques secondes</strong>&nbsp;· 86 tests E2E · F1-score 1.00
-        </div>
-        <a href="{{ '/projets/edr-console-soc.html' | relative_url }}" class="card-link">Lire l'étude de cas</a>
-    </div>
-</div>
+<script>
+(function(){
+  var btns = document.querySelectorAll('.filter');
+  var cards = document.querySelectorAll('.proj');
+  btns.forEach(function(b){
+    b.addEventListener('click', function(){
+      var f = b.dataset.f;
+      btns.forEach(function(x){ x.setAttribute('aria-pressed', String(x === b)); });
+      cards.forEach(function(c){
+        var show = (f === 'all') || c.dataset.c.split(' ').indexOf(f) !== -1;
+        c.classList.toggle('hidden', !show);
+      });
+    });
+  });
+})();
+</script>
 
-<!-- ===== OTHER PROJECTS ===== -->
-<div class="section-title">
-    <div class="section-title__icon">🌐</div>
-    <h2><span>Laboratoires & Gouvernance</span>Autres Projets</h2>
-</div>
-
-<div class="projects-grid">
-    <div class="card card--cyan">
-        <span class="card-label card-label--cyan">Supervision · Fév 2026</span>
-        <h3><a href="{{ '/projets/soc-bancaire.html' | relative_url }}">SOC & Supervision : Infrastructure Bancaire</a></h3>
-        <p class="card-desc">
-            Déploiement du SIEM Wazuh avec FIM et supervision proactive via Zabbix / Grafana sur 5 VMs.
-            Détection d'attaques Brute Force SSH et analyse de requêtes HTTP malveillantes.
-        </p>
-        <div class="card-tags">
-            <span class="card-tag--cyan card-tag">Wazuh</span>
-            <span class="card-tag--cyan card-tag">Grafana</span>
-            <span class="card-tag--cyan card-tag">Zabbix</span>
-        </div>
-    </div>
-
-    <div class="card">
-        <span class="card-label">Durcissement · 2025</span>
-        <h3><a href="{{ '/projets/poc-cyberlimited.html' | relative_url }}">POC Cyber Limited : Infrastructure Sécurisée</a></h3>
-        <p class="card-desc">
-            Création et durcissement de bout en bout d'une infrastructure d'entreprise.
-            Configuration de pfSense, déploiement de l'IDS Snort et hardening multi-OS.
-        </p>
-        <div class="card-tags">
-            <span class="card-tag">pfSense</span>
-            <span class="card-tag">Snort</span>
-            <span class="card-tag">Fail2ban</span>
-            <span class="card-tag">GPO</span>
-        </div>
-    </div>
-
-    <div class="card card--purple">
-        <span class="card-label card-label--purple">Active Directory · 2025</span>
-        <h3><a href="{{ '/projets/ad-vpn.html' | relative_url }}">TechSecure : AD & VPN PKI</a></h3>
-        <p class="card-desc">
-            Infrastructure d'entreprise sécurisée avec Windows Server 2019 (AD DS, DNS, GPO)
-            et tunnel OpenVPN basé sur une PKI (Easy-RSA).
-        </p>
-        <div class="card-tags">
-            <span class="card-tag--purple card-tag">Windows Server</span>
-            <span class="card-tag--purple card-tag">AD DS</span>
-            <span class="card-tag--purple card-tag">OpenVPN</span>
-        </div>
-    </div>
-
-    <div class="card card--cyan">
-        <span class="card-label card-label--cyan">Gouvernance · Jan 2026</span>
-        <h3><a href="{{ '/projets/mitre-analyse.html' | relative_url }}">Analyse de Menaces : MITRE ATT&CK</a></h3>
-        <p class="card-desc">
-            Modélisation des TTPs sur scénarios SCADA et hôteliers, puis élaboration
-            de contre-mesures via MITRE D3FEND et plans de traitement ISO 27005.
-        </p>
-        <div class="card-tags">
-            <span class="card-tag--cyan card-tag">MITRE ATT&CK</span>
-            <span class="card-tag--cyan card-tag">ISO 27005</span>
-            <span class="card-tag--cyan card-tag">SCADA</span>
-        </div>
-    </div>
-
-    <div class="card card--cyan">
-        <span class="card-label card-label--cyan">Gouvernance & Risques · 2025</span>
-        <h3><a href="{{ '/projets/grc-iso27005.html' | relative_url }}">Analyse de Risques ISO 27005</a></h3>
-        <p class="card-desc">
-            Pilotage d'une analyse de risques complète sur un SI d'entreprise. Identification des actifs primaires et supports, évaluation des menaces et élaboration du Plan de Traitement des Risques (PTR).
-        </p>
-        <div class="card-tags">
-            <span class="card-tag--cyan card-tag">EBIOS RM</span>
-            <span class="card-tag--cyan card-tag">ISO 27005</span>
-            <span class="card-tag--cyan card-tag">GRC</span>
-        </div>
-    </div>
-</div>
-
-<!-- ===== CERTIFICATIONS ===== -->
-<div class="section-title" id="certifications">
-    <div class="section-title__icon">📜</div>
-    <h2><span>Formations</span>Certifications & Diplômes</h2>
-</div>
-
-<div class="certs-grid">
-    <div class="cert-item">
-        <div class="cert-icon">🎓</div>
-        <div class="cert-info">
-            <h4>Mastère 1 & 2 Cybersécurité</h4>
-            <p>EFREI Paris · 2026 – 2028</p>
-        </div>
-    </div>
-    <div class="cert-item">
-        <div class="cert-icon">🎓</div>
-        <div class="cert-info">
-            <h4>Bachelor 3 Cybersécurité & Réseaux</h4>
-            <p>ECE Paris · 2025 – 2026</p>
-        </div>
-    </div>
-    <div class="cert-item">
-        <div class="cert-icon">🏆</div>
-        <div class="cert-info">
-            <h4>Cisco Certified</h4>
-            <p>Junior Cybersecurity Analyst · Cyber Threat Management · Network Defense</p>
-        </div>
-    </div>
-    <div class="cert-item">
-        <div class="cert-icon">🛡️</div>
-        <div class="cert-info">
-            <h4>ANSSI — SecNumacadémie</h4>
-            <p>Expertise Sécurité des Systèmes d'Information</p>
-        </div>
-    </div>
-    <div class="cert-item">
-        <div class="cert-icon">📊</div>
-        <div class="cert-info">
-            <h4>DataScientest — Tech Away Cyber</h4>
-            <p>Certification Niveau 2</p>
-        </div>
-    </div>
-    <div class="cert-item">
-        <div class="cert-icon">🏆</div>
-        <div class="cert-info">
-            <h4>Google / Coursera</h4>
-            <p>Foundations of Cybersecurity · Manage Security Risks (2025)</p>
-        </div>
-    </div>
-</div>
+</body>
+</html>

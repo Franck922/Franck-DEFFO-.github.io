@@ -60,6 +60,11 @@ title: Infrastructure EDR & Console SOC
 
 <p><strong>Conclusion :</strong> La migration finale vers PostgreSQL a résolu les problèmes de concurrence initiaux, prouvant ma capacité à adapter une architecture face à des problèmes de montée en charge. L'approche "documentation-first" garantit la pérennité et la maintenabilité de la solution.</p>
 
+<h2>📄 Documentation et code</h2>
+
+<div class="card-result">📎 <a href="{{ '/docs/rapport-stage-ransomware-detector.pdf' | relative_url }}">Rapport complet du détecteur de rançongiciel (PDF)</a></div>
+<div class="card-result">💻 <a href="https://github.com/Franck922/ransomware-detector" target="_blank" rel="noopener">Dépôt du code source</a></div>
+
 <a href="{{ '/' | relative_url }}" class="back-link">← Retour au portfolio</a>
 
 </div>

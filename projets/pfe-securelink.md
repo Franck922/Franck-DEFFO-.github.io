@@ -64,6 +64,10 @@ title: SecureLink — Détection de Phishing par IA
 
 <p><strong>Conclusion :</strong> La suprématie de l'approche hybride pondérée (combiner ML local et règles heuristiques) permet non seulement d'atteindre des métriques parfaites en laboratoire, mais aussi de proposer une solution commerciale viable (modèle Freemium avec API dédiées aux Grands Comptes).</p>
 
+<h2>📄 Documentation</h2>
+
+<div class="card-result">📎 <a href="{{ '/docs/securelink-description-fonctionnelle.pdf' | relative_url }}">Description fonctionnelle de SecureLink (PDF)</a></div>
+
 <a href="{{ '/' | relative_url }}" class="back-link">← Retour au portfolio</a>
 
 </div>
